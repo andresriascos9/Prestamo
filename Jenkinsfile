@@ -50,9 +50,9 @@ pipeline{
         stage('Build'){
             steps{
                 echo "------------>Compilación backend<------------"
-                    dir("${PROJECT_PATH_BACK}"){
-                        sh './gradlew build -x test'
-                    }
+                    sh 'chmod +x ./microservicio/gradlew'
+                    sh './microservicio/gradlew --b ./microservicio/build.gradle clean'
+                    sh './microservicio/gradlew --b ./microservicio/build.gradle build -x test'
                 }
             }
         }
