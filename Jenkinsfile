@@ -33,9 +33,9 @@ pipeline{
         stage('Compilacion y Test Unitarios'){
             steps {
                 echo '------------>Test Backend<------------'
-                sh 'chmod +x gradlew'
-                sh './gradlew clean'
-                sh './gradlew --stacktrace test'
+                sh 'chmod +x ./microservicio/gradlew'
+                sh './microservicio/gradlew --b ./microservicio/build.gradle clean'
+                sh './microservicio/gradlew --b ./microservicio/build.gradle test'
             }
         }
 
