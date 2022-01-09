@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.usuario.servicio.ServicioEliminarUsuarioTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-09T15:26:55" hostname="CARLOS-RIASCO" time="0.004">
+  <properties/>
+  <testcase name="Deberia eliminar el usuario llamando al repositorio" classname="com.ceiba.usuario.servicio.ServicioEliminarUsuarioTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

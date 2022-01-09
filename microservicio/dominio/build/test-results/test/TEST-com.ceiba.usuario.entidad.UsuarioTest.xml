@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.usuario.entidad.UsuarioTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-01-09T15:26:53" hostname="CARLOS-RIASCO" time="0.161">
+  <properties/>
+  <testcase name="deberiaFallarSinTamanioClave()" classname="com.ceiba.usuario.entidad.UsuarioTest" time="0.135"/>
+  <testcase name="Deberia crear correctamente el usuario" classname="com.ceiba.usuario.entidad.UsuarioTest" time="0.01"/>
+  <testcase name="deberiaFallarSinClave()" classname="com.ceiba.usuario.entidad.UsuarioTest" time="0.004"/>
+  <testcase name="deberiaFallarSinNombreDeUsuario()" classname="com.ceiba.usuario.entidad.UsuarioTest" time="0.003"/>
+  <testcase name="deberiaFallarSinFechaCreacion()" classname="com.ceiba.usuario.entidad.UsuarioTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
