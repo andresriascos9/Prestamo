@@ -42,7 +42,7 @@ pipeline{
 		stage('Static Code Analysis') {
 			steps{
 				sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:prestamo-andres.riascos',
-				sonarName:'CeibaADN-Prestamo(andres.riascos)',
+				sonarName:'CeibaADN-Prestamo-andres.riascos',
 				sonarPathProperties:'./sonar-project.properties')
 			}
 		}
