@@ -12,7 +12,7 @@ server:
 
 spring:
    datasource:
-      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.jdbc.Driver
       type: com.zaxxer.hikari.HikariDataSource
       jdbcUrl: jdbc:mysql://localhost:3306/prestamo_adn
       username: root

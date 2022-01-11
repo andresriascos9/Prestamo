@@ -1,0 +1,2 @@
+select identificacion,nombre
+from usuario

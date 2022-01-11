@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Persona.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.persona.modelo.entidad</a> &gt; <span class="el_source">Persona.java</span></div><h1>Persona.java</h1><pre class="source lang-java linenums">package com.ceiba.persona.modelo.entidad;
+
+import lombok.Getter;
+
+import static com.ceiba.dominio.ValidadorArgumento.*;
+
+@Getter
+public class Persona {
+
+    private static final String IDENTIFICACION_DEBE_POSITIVO = &quot;El nÃºmero de identificaciÃ³n debe ser positivo&quot;;
+    private static final String SE_DEBE_INGRESAR_NUMERO_IDENTIFICACION = &quot;Se debe agregar un numero de identificaciÃ³n&quot;;
+    private static final String SE_DEBE_INGRESAR_NOMBRE= &quot;Se debe agregar un nombre completo&quot;;
+
+<span class="nc" id="L14">    private int identificacion;</span>
+<span class="nc" id="L15">    private String nombre;</span>
+
+<span class="nc" id="L17">    public Persona(int identificacion, String nombre) {</span>
+
+<span class="nc" id="L19">        validarObligatorio(identificacion,SE_DEBE_INGRESAR_NUMERO_IDENTIFICACION);</span>
+<span class="nc" id="L20">        validarObligatorio(identificacion,SE_DEBE_INGRESAR_NOMBRE);</span>
+<span class="nc" id="L21">        validarPositivo((double) identificacion,IDENTIFICACION_DEBE_POSITIVO);</span>
+
+<span class="nc" id="L23">        this.identificacion = identificacion;</span>
+<span class="nc" id="L24">        this.nombre = nombre;</span>
+<span class="nc" id="L25">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
