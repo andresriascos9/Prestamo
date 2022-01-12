@@ -10,20 +10,20 @@ public class ServicioCrearPersona {
 
     private final RepositorioPersona repositorioPersona;
 
-<span class="fc" id="L13">    public ServicioCrearPersona(RepositorioPersona repositorioPersona) {</span>
-<span class="fc" id="L14">        this.repositorioPersona = repositorioPersona;</span>
-<span class="fc" id="L15">    }</span>
+<span class="nc" id="L13">    public ServicioCrearPersona(RepositorioPersona repositorioPersona) {</span>
+<span class="nc" id="L14">        this.repositorioPersona = repositorioPersona;</span>
+<span class="nc" id="L15">    }</span>
 
-    public int ejecutar(Persona persona){
-<span class="fc" id="L18">        existePersona(persona.getIdentificacion());</span>
-<span class="fc" id="L19">        return this.repositorioPersona.crear(persona);</span>
+    public Long ejecutar(Persona persona){
+<span class="nc" id="L18">        existePersona(persona.getIdentificacion());</span>
+<span class="nc" id="L19">        return this.repositorioPersona.crear(persona);</span>
 
     }
 
     private void existePersona(int numeroIdentificacion){
-<span class="fc bfc" id="L24" title="All 2 branches covered.">        if(repositorioPersona.existe(numeroIdentificacion)){</span>
-<span class="fc" id="L25">            throw new ExcepcionDuplicidad(LA_PERSONA_EXISTE);</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">        if(repositorioPersona.existe(numeroIdentificacion)){</span>
+<span class="nc" id="L25">            throw new ExcepcionDuplicidad(LA_PERSONA_EXISTE);</span>
         }
-<span class="fc" id="L27">    }</span>
+<span class="nc" id="L27">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

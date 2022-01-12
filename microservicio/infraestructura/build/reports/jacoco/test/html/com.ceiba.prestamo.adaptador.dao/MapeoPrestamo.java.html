@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapeoPrestamo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.prestamo.adaptador.dao</a> &gt; <span class="el_source">MapeoPrestamo.java</span></div><h1>MapeoPrestamo.java</h1><pre class="source lang-java linenums">package com.ceiba.prestamo.adaptador.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import com.ceiba.infraestructura.jdbc.MapperResult;
+import com.ceiba.persona.modelo.dto.DtoPersona;
+import com.ceiba.prestamo.modelo.dto.DtoPrestamo;
+import org.springframework.jdbc.core.RowMapper;
+
+<span class="nc" id="L13">public class MapeoPrestamo implements RowMapper&lt;DtoPrestamo&gt;, MapperResult{</span>
+
+    @Override
+    public DtoPrestamo mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+
+<span class="nc" id="L18">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L19">        LocalDate fecha_pago = extraerLocalDate(resultSet, &quot;fecha_pago&quot;);</span>
+<span class="nc" id="L20">        int valor_prestamo = resultSet.getInt(&quot;valor_prestamo&quot;);</span>
+<span class="nc" id="L21">        Long persona = resultSet.getLong(&quot;persona&quot;);</span>
+<span class="nc" id="L22">        boolean estado_prestamo_pago = resultSet.getBoolean(&quot;estado_prestamo_pago&quot;);</span>
+
+<span class="nc" id="L24">        return new DtoPrestamo(id,fecha_pago,valor_prestamo,persona,estado_prestamo_pago);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

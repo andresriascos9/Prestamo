@@ -12,9 +12,10 @@ public class MapeoPersona implements RowMapper<DtoPersona>, MapperResult{
     @Override
     public DtoPersona mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
+        Long id = resultSet.getLong("id");
         int identificacion = resultSet.getInt("identificacion");
         String nombre = resultSet.getString("nombre");
 
-        return new DtoPersona(identificacion,nombre);
+        return new DtoPersona(id,identificacion,nombre);
     }
 }

@@ -12,10 +12,11 @@ import org.springframework.jdbc.core.RowMapper;
     @Override
     public DtoPersona mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L15">        int identificacion = resultSet.getInt(&quot;identificacion&quot;);</span>
-<span class="nc" id="L16">        String nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="nc" id="L15">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L16">        int identificacion = resultSet.getInt(&quot;identificacion&quot;);</span>
+<span class="nc" id="L17">        String nombre = resultSet.getString(&quot;nombre&quot;);</span>
 
-<span class="nc" id="L18">        return new DtoPersona(identificacion,nombre);</span>
+<span class="nc" id="L19">        return new DtoPersona(id,identificacion,nombre);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

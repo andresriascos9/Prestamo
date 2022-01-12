@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.persona.servicio.ServicioCrearPersonaTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-01-11T17:18:25" hostname="CARLOS-RIASCO" time="2.065">
-  <properties/>
-  <testcase name="Deberia lanzar una exepcion cuando se valide la existencia de la persona" classname="com.ceiba.persona.servicio.ServicioCrearPersonaTest" time="2.033"/>
-  <testcase name="Deberia Crear el usuario de manera correcta" classname="com.ceiba.persona.servicio.ServicioCrearPersonaTest" time="0.031"/>
-  <system-out><![CDATA[Ya existe esta persona
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

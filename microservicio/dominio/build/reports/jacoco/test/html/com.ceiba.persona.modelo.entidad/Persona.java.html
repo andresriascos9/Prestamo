@@ -10,17 +10,19 @@ public class Persona {
     private static final String IDENTIFICACION_DEBE_POSITIVO = &quot;El nÃºmero de identificaciÃ³n debe ser positivo&quot;;
     private static final String SE_DEBE_INGRESAR_NOMBRE= &quot;Se debe agregar un nombre completo&quot;;
 
-<span class="fc" id="L13">    private int identificacion;</span>
-<span class="nc" id="L14">    private String nombre;</span>
+<span class="nc" id="L13">    private Long id;</span>
+<span class="nc" id="L14">    private int identificacion;</span>
+<span class="nc" id="L15">    private String nombre;</span>
 
-<span class="fc" id="L16">    public Persona(int identificacion, String nombre) {</span>
+<span class="nc" id="L17">    public Persona(Long id, int identificacion, String nombre) {</span>
 
-<span class="fc" id="L18">        validarObligatorio(nombre,SE_DEBE_INGRESAR_NOMBRE);</span>
-<span class="fc" id="L19">        validarPositivo((double) identificacion,IDENTIFICACION_DEBE_POSITIVO);</span>
+<span class="nc" id="L19">        validarObligatorio(nombre,SE_DEBE_INGRESAR_NOMBRE);</span>
+<span class="nc" id="L20">        validarPositivo((double) identificacion,IDENTIFICACION_DEBE_POSITIVO);</span>
 
-<span class="fc" id="L21">        this.identificacion = identificacion;</span>
-<span class="fc" id="L22">        this.nombre = nombre;</span>
-<span class="fc" id="L23">    }</span>
+<span class="nc" id="L22">        this.id = id;</span>
+<span class="nc" id="L23">        this.identificacion = identificacion;</span>
+<span class="nc" id="L24">        this.nombre = nombre;</span>
+<span class="nc" id="L25">    }</span>
 
 
 }

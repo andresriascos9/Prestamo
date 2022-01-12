@@ -15,7 +15,7 @@ public class RepositorioPersonaMysql implements RepositorioPersona{
     @SqlStatement(namespace="persona", value="crear")
     private static String sqlCrear;
 
-    @SqlStatement(namespace="usuario", value="existe")
+    @SqlStatement(namespace="persona", value="existe")
     private static String sqlExiste;
 
     public RepositorioPersonaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {

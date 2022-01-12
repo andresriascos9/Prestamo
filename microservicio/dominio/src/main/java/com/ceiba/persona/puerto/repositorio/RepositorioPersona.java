@@ -9,7 +9,7 @@ public interface RepositorioPersona {
      * @param persona
      * @return el id generado
      */
-    int crear(Persona persona);
+    Long crear(Persona persona);
 
     /**
      * Permite validar si existe una persona por su identificacion

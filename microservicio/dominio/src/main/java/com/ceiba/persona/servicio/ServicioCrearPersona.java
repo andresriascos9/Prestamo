@@ -14,7 +14,7 @@ public class ServicioCrearPersona {
         this.repositorioPersona = repositorioPersona;
     }
 
-    public int ejecutar(Persona persona){
+    public Long ejecutar(Persona persona){
         existePersona(persona.getIdentificacion());
         return this.repositorioPersona.crear(persona);
 

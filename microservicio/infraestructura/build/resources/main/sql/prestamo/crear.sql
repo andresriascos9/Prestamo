@@ -1,0 +1,1 @@
+insert into prestamos (fecha_pago,valor_prestamo,estado_prestamo_pago,persona) values (:fecha_pago, :valor_prestamo, :estado_prestamo_pago, :persona)

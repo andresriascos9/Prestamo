@@ -1,0 +1,4 @@
+
+q	java:S116"URename this field "fecha_pago" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞìÆ8¼Áî×ä/
+u	java:S116"YRename this field "valor_prestamo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ì¾’˜8¼Áî×ä/
+{	java:S116"_Rename this field "estado_prestamo_pago" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃµàÂ8¼Áî×ä/

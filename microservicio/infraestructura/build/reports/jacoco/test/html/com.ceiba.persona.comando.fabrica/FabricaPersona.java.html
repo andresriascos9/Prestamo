@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 <span class="fc" id="L8">public class FabricaPersona {</span>
 
     public Persona crear (ComandoPersona comandoPersona){
-<span class="nc" id="L11">        return new Persona(comandoPersona.getIdentificacion(), comandoPersona.getNombre());</span>
+<span class="nc" id="L11">        return new Persona(comandoPersona.getId(), comandoPersona.getIdentificacion(), comandoPersona.getNombre());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

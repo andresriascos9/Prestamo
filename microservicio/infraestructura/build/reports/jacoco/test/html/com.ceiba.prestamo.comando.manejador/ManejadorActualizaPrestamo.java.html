@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ManejadorActualizaPrestamo.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.prestamo.comando.manejador</a> &gt; <span class="el_source">ManejadorActualizaPrestamo.java</span></div><h1>ManejadorActualizaPrestamo.java</h1><pre class="source lang-java linenums">package com.ceiba.prestamo.comando.manejador;
+
+import com.ceiba.manejador.ManejadorComando;
+import com.ceiba.prestamo.comando.ComandoPrestamo;
+import com.ceiba.prestamo.comando.fabrica.FabricaPrestamo;
+import com.ceiba.prestamo.modelo.entidad.Prestamo;
+import com.ceiba.prestamo.servicio.ServicioActualizarPrestamo;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ManejadorActualizaPrestamo implements ManejadorComando&lt;ComandoPrestamo&gt; {
+
+    private final FabricaPrestamo fabricaPrestamo;
+    private final ServicioActualizarPrestamo servicioActualizarPrestamo;
+
+<span class="fc" id="L16">    public ManejadorActualizaPrestamo(FabricaPrestamo fabricaPrestamo, ServicioActualizarPrestamo servicioActualizarPrestamo) {</span>
+<span class="fc" id="L17">        this.fabricaPrestamo = fabricaPrestamo;</span>
+<span class="fc" id="L18">        this.servicioActualizarPrestamo = servicioActualizarPrestamo;</span>
+<span class="fc" id="L19">    }</span>
+
+    public void ejecutar(ComandoPrestamo comandoPrestamo) {
+<span class="nc" id="L22">        Prestamo prestamo = this.fabricaPrestamo.crear(comandoPrestamo);</span>
+<span class="nc" id="L23">        this.servicioActualizarPrestamo.ejecutar(prestamo);</span>
+<span class="nc" id="L24">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

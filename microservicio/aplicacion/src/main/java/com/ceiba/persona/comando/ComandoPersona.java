@@ -11,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ComandoPersona {
 
+    private Long id;
     private int identificacion;
     private String nombre;
 

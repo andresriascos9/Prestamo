@@ -24,12 +24,12 @@ public class ServicioCrearPersonaTest {
         Persona persona = new PersonaTestDataBuilder().build();
         RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
         Mockito.when(repositorioPersona.existe(Mockito.anyInt())).thenReturn(false);
-        Mockito.when(repositorioPersona.crear(persona)).thenReturn(1116269914);
+        Mockito.when(repositorioPersona.crear(persona)).thenReturn(1116269914L);
         ServicioCrearPersona servicioCrearPersona = new ServicioCrearPersona(repositorioPersona);
         // act
-        int idPersona = servicioCrearPersona.ejecutar(persona);
+        Long idPersona = servicioCrearPersona.ejecutar(persona);
         //- assert
-        assertEquals(1116269914,idPersona);
+        assertEquals(1116269914L,idPersona);
         Mockito.verify(repositorioPersona, Mockito.times(1)).crear(persona);
     }
 

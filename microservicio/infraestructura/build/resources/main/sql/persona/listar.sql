@@ -1,2 +1,2 @@
-select identificacion,nombre
-from usuario
+select id,identificacion,nombre
+from persona
