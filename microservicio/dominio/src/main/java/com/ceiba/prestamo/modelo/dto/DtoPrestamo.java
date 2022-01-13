@@ -9,8 +9,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class DtoPrestamo {
     private Long id;
-    private LocalDate fecha_pago;
-    private int valor_prestamo;
+    private LocalDate fechaPago;
+    private int valorPrestamo;
     private Long persona;
-    private boolean estado_prestamo_pago;
+    private boolean estadoPrestamoPago;
 }

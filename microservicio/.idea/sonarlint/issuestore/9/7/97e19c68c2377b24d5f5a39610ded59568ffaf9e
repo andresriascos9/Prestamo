@@ -1,8 +1,0 @@
-
-O
-java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ
-_
-java:S1128	"DRemove this unused import 'com.ceiba.persona.modelo.dto.DtoPersona'.(ŸÅé þÿÿÿÿ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªÛ™©þÿÿÿÿ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…Áå—úÿÿÿÿ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦¬¬¥úÿÿÿÿ

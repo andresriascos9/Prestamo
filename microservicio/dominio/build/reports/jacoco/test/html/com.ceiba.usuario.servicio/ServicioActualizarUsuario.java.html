@@ -10,20 +10,20 @@ public class ServicioActualizarUsuario {
 
     private final RepositorioUsuario repositorioUsuario;
 
-<span class="nc" id="L13">    public ServicioActualizarUsuario(RepositorioUsuario repositorioUsuario) {</span>
-<span class="nc" id="L14">        this.repositorioUsuario = repositorioUsuario;</span>
-<span class="nc" id="L15">    }</span>
+<span class="fc" id="L13">    public ServicioActualizarUsuario(RepositorioUsuario repositorioUsuario) {</span>
+<span class="fc" id="L14">        this.repositorioUsuario = repositorioUsuario;</span>
+<span class="fc" id="L15">    }</span>
 
     public void ejecutar(Usuario usuario) {
-<span class="nc" id="L18">        validarExistenciaPrevia(usuario);</span>
-<span class="nc" id="L19">        this.repositorioUsuario.actualizar(usuario);</span>
-<span class="nc" id="L20">    }</span>
+<span class="fc" id="L18">        validarExistenciaPrevia(usuario);</span>
+<span class="fc" id="L19">        this.repositorioUsuario.actualizar(usuario);</span>
+<span class="fc" id="L20">    }</span>
 
     private void validarExistenciaPrevia(Usuario usuario) {
-<span class="nc" id="L23">        boolean existe = this.repositorioUsuario.existePorId(usuario.getId());</span>
-<span class="nc bnc" id="L24" title="All 2 branches missed.">        if(!existe) {</span>
-<span class="nc" id="L25">            throw new ExcepcionDuplicidad(EL_USUARIO_NO_EXISTE_EN_EL_SISTEMA);</span>
+<span class="fc" id="L23">        boolean existe = this.repositorioUsuario.existePorId(usuario.getId());</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if(!existe) {</span>
+<span class="fc" id="L25">            throw new ExcepcionDuplicidad(EL_USUARIO_NO_EXISTE_EN_EL_SISTEMA);</span>
         }
-<span class="nc" id="L27">    }</span>
+<span class="fc" id="L27">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

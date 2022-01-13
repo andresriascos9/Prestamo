@@ -1,6 +1,5 @@
 package com.ceiba.prestamo.servicio.testDataBuilder;
 
-import com.ceiba.persona.modelo.entidad.Persona;
 import com.ceiba.prestamo.modelo.entidad.Prestamo;
 
 import java.time.DayOfWeek;
@@ -35,7 +34,7 @@ public class PrestamoTestDataBuilder {
     }
 
     public Prestamo build() {
-        return new Prestamo(id,fecha_pago,valor_prestamo,persona,estado_prestamo_pago);
+        return new Prestamo(id,valor_prestamo,persona);
     }
 
     public LocalDate sumarDiasHabiles(LocalDate fecha_inicio, int dias) {

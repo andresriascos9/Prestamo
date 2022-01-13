@@ -1,0 +1,1 @@
+insert into abonos (fecha_abono,valor_abono,prestamo) values (:fecha_abono, :valor_abono, :prestamo)

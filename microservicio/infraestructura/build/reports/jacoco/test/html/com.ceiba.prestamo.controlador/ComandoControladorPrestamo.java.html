@@ -26,7 +26,7 @@ public class ComandoControladorPrestamo {
 <span class="fc" id="L26">    }</span>
 
     @PostMapping
-    @ApiOperation(&quot;Crear Usuario&quot;)
+    @ApiOperation(&quot;Crear Prestamo&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoPrestamo comandoPrestamo) {
 <span class="nc" id="L31">        return manejadorCrearPrestamo.ejecutar(comandoPrestamo);</span>
     }

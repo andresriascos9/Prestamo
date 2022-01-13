@@ -2,10 +2,8 @@ package com.ceiba.prestamo.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
 import com.ceiba.prestamo.modelo.entidad.Prestamo;
 import com.ceiba.prestamo.puerto.repositorio.RepositorioPrestamo;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
@@ -25,6 +23,9 @@ public class RepositorioPrestamoMysql implements RepositorioPrestamo {
 
     @SqlStatement(namespace="prestamo", value="existePersonaPorId")
     private static String sqlexistePersonaPorId;
+
+    @SqlStatement(namespace="prestamo", value="obtenerValorPrestamo")
+    private static String sqlObtenerValorPrestamoPorId;
 
     public RepositorioPrestamoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -54,5 +55,10 @@ public class RepositorioPrestamoMysql implements RepositorioPrestamo {
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlexistePersonaPorId,paramSource, Boolean.class);
     }
 
-
+    @Override
+    public int obtenerPrestamo(Long prestamo){
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("prestamo", prestamo);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerValorPrestamoPorId,paramSource, Integer.class);
+    }
 }

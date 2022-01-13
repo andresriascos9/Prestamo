@@ -24,8 +24,8 @@ public class PrestamoTest {
     void deberiaCrearCorrectamenteElPrestamo() {
         Prestamo prestamo = new PrestamoTestDataBuilder().build();
         //assert
-        assertEquals(sumarDiasHabiles(fechaActual, diasHabilesASumar), prestamo.getFecha_pago());
-        assertEquals(3000000, prestamo.getValor_prestamo());
+        assertEquals(sumarDiasHabiles(fechaActual, diasHabilesASumar), prestamo.getFechaPago());
+        assertEquals(3000000, prestamo.getValorPrestamo());
         assertEquals(1L, prestamo.getPersona());
         assertEquals(false, prestamo.getEstadoPrestamoPago());
     }

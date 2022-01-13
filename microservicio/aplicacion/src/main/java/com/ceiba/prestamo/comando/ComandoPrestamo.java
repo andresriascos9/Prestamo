@@ -13,13 +13,7 @@ import java.time.LocalDate;
 public class ComandoPrestamo {
 
     private Long id;
-    private LocalDate fecha_pago;
     private int valor_prestamo;
     private Long persona;
-    private boolean estado_prestamo_pago;
-
-    public boolean getEstadoPrestamoPago() {
-        return estado_prestamo_pago;
-    }
-
+    
 }

@@ -1,0 +1,1 @@
+SELECT SUM(valor_abono) FROM abonos WHERE prestamo = :prestamo;

@@ -2,6 +2,7 @@
 
 import lombok.Getter;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 import static com.ceiba.dominio.ValidadorArgumento.*;
@@ -12,37 +13,51 @@ public class Prestamo {
     private static final String VALOR_PRESTAMO_DEBE_SER_POSITIVO = &quot;El valor del prestamo debe ser positivo&quot;;
     private static final String SE_DEBE_INGRESAR_ID_PERSONA= &quot;Se debe ingresar el id de la persona&quot;;
     private static final String PERSONA_DEBE_SER_POSITIVO = &quot;El id de la persona debe ser positivo&quot;;
+<span class="fc" id="L16">    private static final LocalDate FECHA_ACTUAL = LocalDate.now();</span>
+    private static final int DIAS_HABILES_A_SUMAR = 10;
 
-<span class="nc" id="L16">    private Long id;</span>
-<span class="fc" id="L17">    private LocalDate fecha_pago;</span>
-<span class="fc" id="L18">    private int valor_prestamo;</span>
-<span class="fc" id="L19">    private Long persona;</span>
-<span class="nc" id="L20">    private boolean estado_prestamo_pago;</span>
+<span class="nc" id="L19">    private Long id;</span>
+<span class="fc" id="L20">    private LocalDate fechaPago;</span>
+<span class="fc" id="L21">    private int valorPrestamo;</span>
+<span class="fc" id="L22">    private Long persona;</span>
+    private boolean estadoPrestamoPago;
 
-<span class="fc" id="L22">    public Prestamo(Long id, LocalDate fecha_pago, int valor_prestamo, Long persona, boolean estado_prestamo_pago){</span>
+<span class="fc" id="L25">    public Prestamo(Long id, int valorPrestamo, Long persona){</span>
 
-<span class="fc" id="L24">        validarObligatorio(persona,SE_DEBE_INGRESAR_ID_PERSONA);</span>
-<span class="fc" id="L25">        validarPositivo((double) valor_prestamo,VALOR_PRESTAMO_DEBE_SER_POSITIVO);</span>
-<span class="fc" id="L26">        validarPositivo((double) persona,PERSONA_DEBE_SER_POSITIVO);</span>
+<span class="fc" id="L27">        validarObligatorio(persona,SE_DEBE_INGRESAR_ID_PERSONA);</span>
+<span class="fc" id="L28">        validarPositivo((double) valorPrestamo,VALOR_PRESTAMO_DEBE_SER_POSITIVO);</span>
+<span class="fc" id="L29">        validarPositivo((double) persona,PERSONA_DEBE_SER_POSITIVO);</span>
 
-<span class="fc" id="L28">        this.id = id;</span>
-<span class="fc" id="L29">        this.fecha_pago = fecha_pago;</span>
-<span class="fc" id="L30">        this.valor_prestamo = valor_prestamo;</span>
-<span class="fc" id="L31">        this.persona = persona;</span>
-<span class="fc" id="L32">        this.estado_prestamo_pago = estado_prestamo_pago;</span>
-<span class="fc" id="L33">    }</span>
+<span class="fc" id="L31">        this.id = id;</span>
+<span class="fc" id="L32">        this.fechaPago = sumarDiasHabiles(FECHA_ACTUAL, DIAS_HABILES_A_SUMAR);</span>
+<span class="fc" id="L33">        this.valorPrestamo = valorPrestamo;</span>
+<span class="fc" id="L34">        this.persona = persona;</span>
+<span class="fc" id="L35">    }</span>
 
 
     public boolean getEstadoPrestamoPago() {
-<span class="fc" id="L37">        return estado_prestamo_pago;</span>
+<span class="fc" id="L39">        return estadoPrestamoPago;</span>
     }
 
-    public void setFechaPago(LocalDate fecha_pago){
-<span class="nc" id="L41">        this.fecha_pago = fecha_pago;</span>
-<span class="nc" id="L42">    }</span>
+    public void setEstado_prestamo_pago(boolean estadoPrestamoPago){
+<span class="fc" id="L43">        this.estadoPrestamoPago = estadoPrestamoPago;</span>
+<span class="fc" id="L44">    }</span>
 
-    public void setEstado_prestamo_pago(boolean estado_prestamo_pago){
-<span class="nc" id="L45">        this.estado_prestamo_pago = estado_prestamo_pago;</span>
-<span class="nc" id="L46">    }</span>
+    private LocalDate sumarDiasHabiles(LocalDate fecha_inicio, int dias) {
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">        if (dias &lt; 1) {</span>
+<span class="nc" id="L48">            return fecha_inicio;</span>
+        }
+<span class="fc" id="L50">        LocalDate fecha_calculada = fecha_inicio;</span>
+<span class="fc" id="L51">        int diasSumados = 0;</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        while (diasSumados &lt; dias) {</span>
+<span class="fc" id="L53">            fecha_calculada = fecha_calculada.plusDays(1);</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">            if (!(fecha_calculada.getDayOfWeek() == DayOfWeek.SATURDAY ||</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">                    fecha_calculada.getDayOfWeek() == DayOfWeek.SUNDAY)) {</span>
+<span class="fc" id="L56">                ++diasSumados;</span>
+            }
+        }
+<span class="fc" id="L59">        return fecha_calculada;</span>
+    }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
