@@ -5,13 +5,7 @@ import com.ceiba.abono.comando.ComandoAbono;
 import com.ceiba.abono.comando.fabrica.FabricaAbono;
 import com.ceiba.abonos.modelo.entidad.Abono;
 import com.ceiba.abonos.servicio.ServicioCrearAbono;
-import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
-import com.ceiba.prestamo.comando.ComandoPrestamo;
-import com.ceiba.prestamo.comando.fabrica.FabricaPrestamo;
-import com.ceiba.prestamo.modelo.entidad.Prestamo;
-import com.ceiba.prestamo.servicio.ServicioActualizarPrestamo;
-import com.ceiba.prestamo.servicio.ServicioCrearPrestamo;
 import org.springframework.stereotype.Component;
 
 @Component

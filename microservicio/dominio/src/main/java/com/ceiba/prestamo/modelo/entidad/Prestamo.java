@@ -34,29 +34,37 @@ public class Prestamo {
         this.persona = persona;
     }
 
+    public Prestamo(Long id, boolean estadoPrestamoPago) {
+        this.id = id;
+        this.estadoPrestamoPago = estadoPrestamoPago;
+    }
 
     public boolean getEstadoPrestamoPago() {
         return estadoPrestamoPago;
     }
 
-    public void setEstado_prestamo_pago(boolean estadoPrestamoPago){
+    public void setEstadoPrestamoPago(boolean estadoPrestamoPago){
         this.estadoPrestamoPago = estadoPrestamoPago;
     }
 
-    private LocalDate sumarDiasHabiles(LocalDate fecha_inicio, int dias) {
+    public void setFechaPago(LocalDate fechaPago){
+        this.fechaPago = fechaPago;
+    }
+
+    private LocalDate sumarDiasHabiles(LocalDate fechaInicio, int dias) {
         if (dias < 1) {
-            return fecha_inicio;
+            return fechaInicio;
         }
-        LocalDate fecha_calculada = fecha_inicio;
+        LocalDate fechaCalculada = fechaInicio;
         int diasSumados = 0;
         while (diasSumados < dias) {
-            fecha_calculada = fecha_calculada.plusDays(1);
-            if (!(fecha_calculada.getDayOfWeek() == DayOfWeek.SATURDAY ||
-                    fecha_calculada.getDayOfWeek() == DayOfWeek.SUNDAY)) {
+            fechaCalculada = fechaCalculada.plusDays(1);
+            if (!(fechaCalculada.getDayOfWeek() == DayOfWeek.SATURDAY ||
+                    fechaCalculada.getDayOfWeek() == DayOfWeek.SUNDAY)) {
                 ++diasSumados;
             }
         }
-        return fecha_calculada;
+        return fechaCalculada;
     }
 
 }

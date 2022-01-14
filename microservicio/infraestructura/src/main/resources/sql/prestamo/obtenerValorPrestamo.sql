@@ -1,1 +1,0 @@
-select valor_prestamo from prestamos where id = :prestamo

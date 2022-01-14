@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class DtoAbono {
     private Long id;
-    private LocalDate fecha_abono;
-    private int valor_abono;
+    private LocalDate fechaAbono;
+    private int valorAbono;
     private Long prestamo;
 }

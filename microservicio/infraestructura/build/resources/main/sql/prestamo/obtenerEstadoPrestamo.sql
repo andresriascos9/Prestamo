@@ -1,0 +1,1 @@
+select estado_prestamo_pago from prestamos where id = :id

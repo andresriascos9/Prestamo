@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class FabricaPrestamo {
 
     public Prestamo crear (ComandoPrestamo comandoPrestamo){
-        return new Prestamo(comandoPrestamo.getId(), comandoPrestamo.getValor_prestamo(), comandoPrestamo.getPersona());
+        return new Prestamo(comandoPrestamo.getId(), comandoPrestamo.getValorPrestamo(), comandoPrestamo.getPersona());
     }
 
 }

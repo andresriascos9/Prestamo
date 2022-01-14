@@ -12,22 +12,22 @@ public class ServicioCrearPrestamo {
 
     private final RepositorioPrestamo repositorioPrestamo;
 
-<span class="fc" id="L15">    public ServicioCrearPrestamo(RepositorioPrestamo repositorioPrestamo) {</span>
-<span class="fc" id="L16">        this.repositorioPrestamo = repositorioPrestamo;</span>
-<span class="fc" id="L17">    }</span>
+<span class="nc" id="L15">    public ServicioCrearPrestamo(RepositorioPrestamo repositorioPrestamo) {</span>
+<span class="nc" id="L16">        this.repositorioPrestamo = repositorioPrestamo;</span>
+<span class="nc" id="L17">    }</span>
 
     public Long ejecutar(Prestamo prestamo) {
-<span class="fc" id="L20">        validarExistenciaPrevia(prestamo);</span>
-<span class="fc" id="L21">        prestamo.setEstado_prestamo_pago(false);</span>
-<span class="fc" id="L22">        return this.repositorioPrestamo.crear(prestamo);</span>
+<span class="nc" id="L20">        validarExistenciaPrevia(prestamo);</span>
+<span class="nc" id="L21">        prestamo.setEstadoPrestamoPago(false);</span>
+<span class="nc" id="L22">        return this.repositorioPrestamo.crear(prestamo);</span>
     }
 
     private void validarExistenciaPrevia(Prestamo prestamo) {
-<span class="fc" id="L26">        boolean existe = this.repositorioPrestamo.existePersonaPorIdConPrestamoSinCancelar(prestamo.getPersona());</span>
-<span class="fc bfc" id="L27" title="All 2 branches covered.">        if(existe) {</span>
-<span class="fc" id="L28">            throw new ExcepcionDuplicidad(EL_PRESTAMO_YA_EXISTE_EN_EL_SISTEMA);</span>
+<span class="nc" id="L26">        boolean existe = this.repositorioPrestamo.existePersonaPorIdConPrestamoSinCancelar(prestamo.getPersona());</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">        if(existe) {</span>
+<span class="nc" id="L28">            throw new ExcepcionDuplicidad(EL_PRESTAMO_YA_EXISTE_EN_EL_SISTEMA);</span>
         }
-<span class="fc" id="L30">    }</span>
+<span class="nc" id="L30">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

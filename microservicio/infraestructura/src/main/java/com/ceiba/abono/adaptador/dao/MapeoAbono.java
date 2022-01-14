@@ -14,10 +14,10 @@ public class MapeoAbono implements RowMapper<DtoAbono>, MapperResult{
     public DtoAbono mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
         Long id = resultSet.getLong("id");
-        LocalDate fecha_abono = extraerLocalDate(resultSet, "fecha_abono");
-        int valor_abono = resultSet.getInt("valor_abono");
+        LocalDate fechaAbono = extraerLocalDate(resultSet, "fecha_abono");
+        int valorAbono = resultSet.getInt("valor_abono");
         Long prestamo = resultSet.getLong("prestamo");
 
-        return new DtoAbono(id,fecha_abono,valor_abono,prestamo);
+        return new DtoAbono(id,fechaAbono,valorAbono,prestamo);
     }
 }

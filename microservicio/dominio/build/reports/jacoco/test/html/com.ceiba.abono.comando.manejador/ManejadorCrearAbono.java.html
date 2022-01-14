@@ -5,13 +5,7 @@ import com.ceiba.abono.comando.ComandoAbono;
 import com.ceiba.abono.comando.fabrica.FabricaAbono;
 import com.ceiba.abonos.modelo.entidad.Abono;
 import com.ceiba.abonos.servicio.ServicioCrearAbono;
-import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
-import com.ceiba.prestamo.comando.ComandoPrestamo;
-import com.ceiba.prestamo.comando.fabrica.FabricaPrestamo;
-import com.ceiba.prestamo.modelo.entidad.Prestamo;
-import com.ceiba.prestamo.servicio.ServicioActualizarPrestamo;
-import com.ceiba.prestamo.servicio.ServicioCrearPrestamo;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,14 +14,14 @@ public class ManejadorCrearAbono implements ManejadorComandoRespuesta&lt;Comando
     private final FabricaAbono fabricaAbono;
     private final ServicioCrearAbono servicioCrearAbono;
 
-<span class="nc" id="L23">    public ManejadorCrearAbono(FabricaAbono fabricaAbono, ServicioCrearAbono servicioCrearAbono) {</span>
-<span class="nc" id="L24">        this.fabricaAbono = fabricaAbono;</span>
-<span class="nc" id="L25">        this.servicioCrearAbono = servicioCrearAbono;</span>
-<span class="nc" id="L26">    }</span>
+<span class="nc" id="L17">    public ManejadorCrearAbono(FabricaAbono fabricaAbono, ServicioCrearAbono servicioCrearAbono) {</span>
+<span class="nc" id="L18">        this.fabricaAbono = fabricaAbono;</span>
+<span class="nc" id="L19">        this.servicioCrearAbono = servicioCrearAbono;</span>
+<span class="nc" id="L20">    }</span>
 
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoAbono comandoAbono) {
-<span class="nc" id="L29">        Abono abono = this.fabricaAbono.crear(comandoAbono);</span>
-<span class="nc" id="L30">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearAbono.ejecutar(abono));</span>
+<span class="nc" id="L23">        Abono abono = this.fabricaAbono.crear(comandoAbono);</span>
+<span class="nc" id="L24">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearAbono.ejecutar(abono));</span>
     }
 
 }

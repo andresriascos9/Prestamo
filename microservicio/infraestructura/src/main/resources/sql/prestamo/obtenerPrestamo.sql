@@ -1,0 +1,1 @@
+select * from prestamos where id = :prestamo

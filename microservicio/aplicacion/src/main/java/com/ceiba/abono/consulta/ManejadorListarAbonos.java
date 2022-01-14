@@ -17,4 +17,6 @@ public class ManejadorListarAbonos {
 
     public List<DtoAbono> ejecutar(){ return this.daoAbono.listar(); }
 
+    public List<DtoAbono> consultaPorPrestamo(Long prestamo){ return this.daoAbono.listarPorPrestamo(prestamo); }
+
 }

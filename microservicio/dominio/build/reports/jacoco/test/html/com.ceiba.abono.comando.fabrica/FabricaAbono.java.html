@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 <span class="nc" id="L8">public class FabricaAbono {</span>
 
     public Abono crear (ComandoAbono comandoAbono){
-<span class="nc" id="L11">        return new Abono(comandoAbono.getId(), comandoAbono.getFecha_abono(),</span>
-<span class="nc" id="L12">                comandoAbono.getValor_abono(), comandoAbono.getPrestamo());</span>
+<span class="nc" id="L11">        return new Abono(comandoAbono.getId(), comandoAbono.getValorAbono(), comandoAbono.getPrestamo());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -19,7 +19,6 @@ public class BasePrueba {
         } catch (Exception e) {
             assertTrue(exception.isInstance(e), SE_ESPERABA_LA_EXCEPCION + exception.getCanonicalName() + PERO_FUE_LANZADA
                     + e.getClass().getCanonicalName());
-            System.out.println(e.getMessage());
             assertTrue(e.getMessage().contains(message));
         }
     }

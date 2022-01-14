@@ -14,8 +14,7 @@ import java.time.LocalDate;
 public class ComandoAbono {
 
     private Long id;
-    private LocalDate fecha_abono;
-    private int valor_abono;
+    private int valorAbono;
     private Long prestamo;
 
 }

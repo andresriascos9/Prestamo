@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 public class FabricaAbono {
 
     public Abono crear (ComandoAbono comandoAbono){
-        return new Abono(comandoAbono.getId(), comandoAbono.getFecha_abono(),
-                comandoAbono.getValor_abono(), comandoAbono.getPrestamo());
+        return new Abono(comandoAbono.getId(), comandoAbono.getValorAbono(), comandoAbono.getPrestamo());
     }
 }

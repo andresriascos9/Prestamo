@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class ComandoPrestamo {
 
     private Long id;
-    private int valor_prestamo;
+    private int valorPrestamo;
     private Long persona;
-    
+
 }

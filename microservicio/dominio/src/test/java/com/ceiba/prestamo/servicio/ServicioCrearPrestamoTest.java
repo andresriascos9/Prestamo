@@ -43,6 +43,7 @@ public class ServicioCrearPrestamoTest {
         Mockito.doReturn(true).when(repositorioPrestamo).existePersonaPorIdConPrestamoSinCancelar(prestamo.getPersona());
         ServicioCrearPrestamo servicioCrearPrestamo = new ServicioCrearPrestamo(repositorioPrestamo);
         // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearPrestamo.ejecutar(prestamo), ExcepcionDuplicidad.class,"La persona ya tiene un prestamo sin cancelar");
+        BasePrueba.assertThrows(() -> servicioCrearPrestamo.ejecutar(prestamo),
+                ExcepcionDuplicidad.class,"La persona ya tiene un prestamo sin cancelar");
     }
 }

@@ -2,9 +2,8 @@ package com.ceiba.abono.controlador;
 
 import com.ceiba.abono.consulta.ManejadorListarAbonos;
 import com.ceiba.abonos.modelo.dto.DtoAbono;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.ceiba.usuario.comando.ComandoUsuario;
+import org.springframework.web.bind.annotation.*;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -27,5 +26,13 @@ public class ConsultaControladorAbono {
     public List<DtoAbono> listar() {
         return this.manejadorListarAbonos.ejecutar();
     }
+
+
+    @GetMapping(value="/{prestamo}")
+    @ApiOperation("Listar Abonos de un prestamo")
+    public List<DtoAbono> listarAbonosPorPrestamo(@PathVariable Long prestamo) {
+            return this.manejadorListarAbonos.consultaPorPrestamo(prestamo);
+        }
+
 
 }

@@ -11,4 +11,6 @@ public interface DaoAbono {
      * @return los abonos
      */
     List<DtoAbono> listar();
+
+    List<DtoAbono> listarPorPrestamo(Long prestamo);
 }

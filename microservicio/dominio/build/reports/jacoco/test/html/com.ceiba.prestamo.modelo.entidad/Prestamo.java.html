@@ -16,7 +16,7 @@ public class Prestamo {
 <span class="fc" id="L16">    private static final LocalDate FECHA_ACTUAL = LocalDate.now();</span>
     private static final int DIAS_HABILES_A_SUMAR = 10;
 
-<span class="nc" id="L19">    private Long id;</span>
+<span class="fc" id="L19">    private Long id;</span>
 <span class="fc" id="L20">    private LocalDate fechaPago;</span>
 <span class="fc" id="L21">    private int valorPrestamo;</span>
 <span class="fc" id="L22">    private Long persona;</span>
@@ -34,29 +34,37 @@ public class Prestamo {
 <span class="fc" id="L34">        this.persona = persona;</span>
 <span class="fc" id="L35">    }</span>
 
+<span class="nc" id="L37">    public Prestamo(Long id, boolean estadoPrestamoPago) {</span>
+<span class="nc" id="L38">        this.id = id;</span>
+<span class="nc" id="L39">        this.estadoPrestamoPago = estadoPrestamoPago;</span>
+<span class="nc" id="L40">    }</span>
 
     public boolean getEstadoPrestamoPago() {
-<span class="fc" id="L39">        return estadoPrestamoPago;</span>
+<span class="fc" id="L43">        return estadoPrestamoPago;</span>
     }
 
-    public void setEstado_prestamo_pago(boolean estadoPrestamoPago){
-<span class="fc" id="L43">        this.estadoPrestamoPago = estadoPrestamoPago;</span>
-<span class="fc" id="L44">    }</span>
+    public void setEstadoPrestamoPago(boolean estadoPrestamoPago){
+<span class="nc" id="L47">        this.estadoPrestamoPago = estadoPrestamoPago;</span>
+<span class="nc" id="L48">    }</span>
 
-    private LocalDate sumarDiasHabiles(LocalDate fecha_inicio, int dias) {
-<span class="pc bpc" id="L47" title="1 of 2 branches missed.">        if (dias &lt; 1) {</span>
-<span class="nc" id="L48">            return fecha_inicio;</span>
+    public void setFechaPago(LocalDate fechaPago){
+<span class="fc" id="L51">        this.fechaPago = fechaPago;</span>
+<span class="fc" id="L52">    }</span>
+
+    private LocalDate sumarDiasHabiles(LocalDate fechaInicio, int dias) {
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">        if (dias &lt; 1) {</span>
+<span class="nc" id="L56">            return fechaInicio;</span>
         }
-<span class="fc" id="L50">        LocalDate fecha_calculada = fecha_inicio;</span>
-<span class="fc" id="L51">        int diasSumados = 0;</span>
-<span class="fc bfc" id="L52" title="All 2 branches covered.">        while (diasSumados &lt; dias) {</span>
-<span class="fc" id="L53">            fecha_calculada = fecha_calculada.plusDays(1);</span>
-<span class="fc bfc" id="L54" title="All 2 branches covered.">            if (!(fecha_calculada.getDayOfWeek() == DayOfWeek.SATURDAY ||</span>
-<span class="fc bfc" id="L55" title="All 2 branches covered.">                    fecha_calculada.getDayOfWeek() == DayOfWeek.SUNDAY)) {</span>
-<span class="fc" id="L56">                ++diasSumados;</span>
+<span class="fc" id="L58">        LocalDate fechaCalculada = fechaInicio;</span>
+<span class="fc" id="L59">        int diasSumados = 0;</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        while (diasSumados &lt; dias) {</span>
+<span class="fc" id="L61">            fechaCalculada = fechaCalculada.plusDays(1);</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">            if (!(fechaCalculada.getDayOfWeek() == DayOfWeek.SATURDAY ||</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">                    fechaCalculada.getDayOfWeek() == DayOfWeek.SUNDAY)) {</span>
+<span class="fc" id="L64">                ++diasSumados;</span>
             }
         }
-<span class="fc" id="L59">        return fecha_calculada;</span>
+<span class="fc" id="L67">        return fechaCalculada;</span>
     }
 
 }

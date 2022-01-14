@@ -1,5 +1,6 @@
 package com.ceiba.prestamo.puerto.repositorio;
 
+import com.ceiba.prestamo.modelo.dto.DtoPrestamo;
 import com.ceiba.prestamo.modelo.entidad.Prestamo;
 
 public interface RepositorioPrestamo {
@@ -15,7 +16,7 @@ public interface RepositorioPrestamo {
      * Permite actualizar un prestamo
      * @param prestamo
      */
-    void actualizar(Prestamo prestamo);
+    void actualizar(Long prestamo, boolean estadoPago);
 
     /**
      * Permite validar si existe un prestamo por id
@@ -24,14 +25,20 @@ public interface RepositorioPrestamo {
     boolean existePorId(Long id);
 
     /**
+     * Permite validar si existe un prestamo por id
+     * @return si existe o no
+     */
+    boolean obtenerEstadoPrestamo(Long id);
+
+    /**
      * Permite validar si existe un prestamo sin pago de una persona por id
      * @return si existe o no
      */
     boolean existePersonaPorIdConPrestamoSinCancelar(Long id);
 
     /**
-     * Permite obtener el valor del prestamo
-     * @return valor_prestamo
+     * Permite obtener el prestamo
+     * @return dtoPrestamo
      */
-    int obtenerPrestamo(Long id);
+    DtoPrestamo obteneroPrestamo(Long prestamo);
 }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-01-13T17:40:11" hostname="CARLOS-RIASCO" time="0.086">
-  <properties/>
-  <testcase name="Deberia Crear el usuario de manera correcta" classname="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" time="0.075"/>
-  <testcase name="Deberia lanzar una exepcion cuando se valide la existencia del prestamo a la persona sin tener el otro prestamo pago" classname="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" time="0.008"/>
-  <system-out><![CDATA[La persona ya tiene un prestamo sin cancelar
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

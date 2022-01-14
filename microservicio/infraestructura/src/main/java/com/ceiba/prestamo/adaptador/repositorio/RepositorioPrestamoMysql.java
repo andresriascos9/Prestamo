@@ -2,6 +2,8 @@ package com.ceiba.prestamo.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.prestamo.adaptador.dao.MapeoPrestamo;
+import com.ceiba.prestamo.modelo.dto.DtoPrestamo;
 import com.ceiba.prestamo.modelo.entidad.Prestamo;
 import com.ceiba.prestamo.puerto.repositorio.RepositorioPrestamo;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -24,8 +26,11 @@ public class RepositorioPrestamoMysql implements RepositorioPrestamo {
     @SqlStatement(namespace="prestamo", value="existePersonaPorId")
     private static String sqlexistePersonaPorId;
 
-    @SqlStatement(namespace="prestamo", value="obtenerValorPrestamo")
-    private static String sqlObtenerValorPrestamoPorId;
+    @SqlStatement(namespace="prestamo", value="obtenerPrestamo")
+    private static String sqlObtenerPrestamo;
+
+    @SqlStatement(namespace="prestamo", value="obtenerEstadoPrestamo")
+    private static String sqlObtenerEstadoPrestamo;
 
     public RepositorioPrestamoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -37,8 +42,9 @@ public class RepositorioPrestamoMysql implements RepositorioPrestamo {
     }
 
     @Override
-    public void actualizar(Prestamo prestamo) {
-        this.customNamedParameterJdbcTemplate.actualizar(prestamo, sqlActualizar);
+    public void actualizar(Long prestamo, boolean estadoPrestamoPago) {
+        Prestamo prestamoObject = new Prestamo(prestamo, estadoPrestamoPago);
+        this.customNamedParameterJdbcTemplate.actualizar(prestamoObject, sqlActualizar);
     }
 
     @Override
@@ -49,6 +55,13 @@ public class RepositorioPrestamoMysql implements RepositorioPrestamo {
     }
 
     @Override
+    public boolean obtenerEstadoPrestamo(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerEstadoPrestamo,paramSource, Boolean.class);
+    }
+
+    @Override
     public boolean existePersonaPorIdConPrestamoSinCancelar(Long persona) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("persona", persona);
@@ -56,9 +69,9 @@ public class RepositorioPrestamoMysql implements RepositorioPrestamo {
     }
 
     @Override
-    public int obtenerPrestamo(Long prestamo){
+    public DtoPrestamo obteneroPrestamo(Long prestamo){
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("prestamo", prestamo);
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerValorPrestamoPorId,paramSource, Integer.class);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPrestamo,paramSource,new MapeoPrestamo());
     }
 }

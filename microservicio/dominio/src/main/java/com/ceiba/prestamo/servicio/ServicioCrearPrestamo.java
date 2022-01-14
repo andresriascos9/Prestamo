@@ -18,7 +18,7 @@ public class ServicioCrearPrestamo {
 
     public Long ejecutar(Prestamo prestamo) {
         validarExistenciaPrevia(prestamo);
-        prestamo.setEstado_prestamo_pago(false);
+        prestamo.setEstadoPrestamoPago(false);
         return this.repositorioPrestamo.crear(prestamo);
     }
 
