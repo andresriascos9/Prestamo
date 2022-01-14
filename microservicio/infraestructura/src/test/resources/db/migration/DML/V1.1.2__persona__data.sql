@@ -1,0 +1,1 @@
+insert into persona (identificacion ,nombre) values(1234, 'test')

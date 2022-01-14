@@ -24,7 +24,7 @@ public class DaoUsuarioMysql implements DaoUsuario {
 
     @Override
     public List&lt;DtoUsuario&gt; listar() {
-<span class="fc" id="L27">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoUsuario());</span>
+<span class="nc" id="L27">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoUsuario());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

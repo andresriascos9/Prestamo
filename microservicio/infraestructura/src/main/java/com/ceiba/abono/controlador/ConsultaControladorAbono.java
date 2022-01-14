@@ -2,7 +2,6 @@ package com.ceiba.abono.controlador;
 
 import com.ceiba.abono.consulta.ManejadorListarAbonos;
 import com.ceiba.abonos.modelo.dto.DtoAbono;
-import com.ceiba.usuario.comando.ComandoUsuario;
 import org.springframework.web.bind.annotation.*;
 
 import io.swagger.annotations.Api;

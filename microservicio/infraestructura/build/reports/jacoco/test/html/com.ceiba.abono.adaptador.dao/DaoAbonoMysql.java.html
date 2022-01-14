@@ -7,6 +7,7 @@ import com.ceiba.abonos.puerto.dao.DaoAbono;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,13 +19,23 @@ public class DaoAbonoMysql implements DaoAbono {
     @SqlStatement(namespace=&quot;abono&quot;, value=&quot;listar&quot;)
     private static String sqlListar;
 
-<span class="fc" id="L21">    public DaoAbonoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L22">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L23">    }</span>
+    @SqlStatement(namespace=&quot;abono&quot;, value=&quot;listarPorPrestamo&quot;)
+    private static String sqlListarPorPrestamo;
+
+<span class="fc" id="L25">    public DaoAbonoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L26">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L27">    }</span>
 
     @Override
     public List&lt;DtoAbono&gt; listar() {
-<span class="nc" id="L27">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoAbono());</span>
+<span class="nc" id="L31">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoAbono());</span>
+    }
+
+    @Override
+    public List&lt;DtoAbono&gt; listarPorPrestamo(Long prestamo) {
+<span class="nc" id="L36">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L37">        paramSource.addValue(&quot;prestamo&quot;, prestamo);</span>
+<span class="nc" id="L38">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPorPrestamo, paramSource, new MapeoAbono());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

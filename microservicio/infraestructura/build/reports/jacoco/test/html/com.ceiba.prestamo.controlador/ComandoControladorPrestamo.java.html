@@ -2,7 +2,6 @@
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.prestamo.comando.ComandoPrestamo;
-import com.ceiba.prestamo.comando.manejador.ManejadorActualizaPrestamo;
 import com.ceiba.prestamo.comando.manejador.ManejadorCrearPrestamo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,26 +15,16 @@ import io.swagger.annotations.ApiOperation;
 public class ComandoControladorPrestamo {
 
     private final ManejadorCrearPrestamo manejadorCrearPrestamo;
-    private final ManejadorActualizaPrestamo manejadorActualizarPrestamo;
 
     @Autowired
-    public ComandoControladorPrestamo(ManejadorCrearPrestamo manejadorCrearPrestamo,
-<span class="fc" id="L23">                                      ManejadorActualizaPrestamo manejadorActualizarPrestamo) {</span>
-<span class="fc" id="L24">        this.manejadorCrearPrestamo = manejadorCrearPrestamo;</span>
-<span class="fc" id="L25">        this.manejadorActualizarPrestamo = manejadorActualizarPrestamo;</span>
-<span class="fc" id="L26">    }</span>
+<span class="fc" id="L20">    public ComandoControladorPrestamo(ManejadorCrearPrestamo manejadorCrearPrestamo) {</span>
+<span class="fc" id="L21">        this.manejadorCrearPrestamo = manejadorCrearPrestamo;</span>
+<span class="fc" id="L22">    }</span>
 
     @PostMapping
     @ApiOperation(&quot;Crear Prestamo&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoPrestamo comandoPrestamo) {
-<span class="nc" id="L31">        return manejadorCrearPrestamo.ejecutar(comandoPrestamo);</span>
+<span class="nc" id="L27">        return manejadorCrearPrestamo.ejecutar(comandoPrestamo);</span>
     }
-
-    @PutMapping(value=&quot;/{id}&quot;)
-    @ApiOperation(&quot;Actualizar Prestamo&quot;)
-    public void actualizar(@RequestBody ComandoPrestamo comandoPrestamo,@PathVariable Long id) {
-<span class="nc" id="L37">        comandoPrestamo.setId(id);</span>
-<span class="nc" id="L38">        manejadorActualizarPrestamo.ejecutar(comandoPrestamo);</span>
-<span class="nc" id="L39">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
