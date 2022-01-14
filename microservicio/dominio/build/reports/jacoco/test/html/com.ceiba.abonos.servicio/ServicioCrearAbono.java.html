@@ -61,45 +61,41 @@ public class ServicioCrearAbono {
 <span class="nc" id="L61">            reglaUnSoloPagoAntesDeFechaObtieneDescuento(valorAPagar, valorAbono);</span>
 <span class="fc bfc" id="L62" title="All 2 branches covered.">        }else if(fechaPago.isBefore(FECHA_ACTUAL)){</span>
 <span class="fc" id="L63">            reglaPagoDespuesDeFechaObtieneMoraEnSaldo(valorAPagar, valorAbono);</span>
-<span class="fc bfc" id="L64" title="All 2 branches covered.">        }if(valorAPagar &lt; valorAbono) {</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        }else if(valorAPagar &lt; valorAbono) {</span>
 <span class="fc" id="L65">            throw new ExcepcionValorInvalido(EL_ABONO_ES_MAYOR_AL_PRESTAMO);</span>
-        }else
-        //validamos si estÃ¡ el pago total del prestamo para cambiar el estado
-<span class="fc bfc" id="L68" title="All 2 branches covered.">        if(valorAPagar == valorAbono){</span>
-<span class="fc" id="L69">            actualizarEstadoPrestamoPorPagoTotal(prestamo);</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        }else if(valorAPagar == valorAbono){</span>
+<span class="fc" id="L67">            actualizarEstadoPrestamoPorPagoTotal(prestamo);</span>
         }
-<span class="fc" id="L71">    }</span>
+<span class="fc" id="L69">    }</span>
 
     private int sumarAbonosAnteriores(Long prestamo){
-<span class="fc" id="L74">        return this.repositorioAbono.sumarAbonos(prestamo);</span>
+<span class="fc" id="L72">        return this.repositorioAbono.sumarAbonos(prestamo);</span>
     }
 
     private void actualizarEstadoPrestamoPorPagoTotal(Long prestamo){
-<span class="fc" id="L78">        this.repositorioPrestamo.actualizar(prestamo, BOOLEAN_ESTADO_PRESTAMO_PAGO);</span>
-<span class="fc" id="L79">    }</span>
+<span class="fc" id="L76">        this.repositorioPrestamo.actualizar(prestamo, BOOLEAN_ESTADO_PRESTAMO_PAGO);</span>
+<span class="fc" id="L77">    }</span>
 
     private void reglaUnSoloPagoAntesDeFechaObtieneDescuento(int valorAPagar, int valorAbono){
-<span class="pc bpc" id="L82" title="1 of 2 branches missed.">        if(valorAbono &gt; valorAPagar) {</span>
-<span class="fc" id="L83">            throw new ExcepcionValorInvalido(String.format(DESCUENTO_POR_PAGO_ANTES, valorAPagar));</span>
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">        if(valorAbono &gt; valorAPagar) {</span>
+<span class="fc" id="L81">            throw new ExcepcionValorInvalido(String.format(DESCUENTO_POR_PAGO_ANTES, valorAPagar));</span>
         }
-<span class="nc" id="L85">    }</span>
+<span class="nc" id="L83">    }</span>
 
     private void reglaPagoDespuesDeFechaObtieneMoraEnSaldo(int valorAPagar, int valorAbono){
-<span class="fc bfc" id="L88" title="All 2 branches covered.">        if(valorAbono &lt; valorAPagar) {</span>
-<span class="fc" id="L89">            throw new ExcepcionValorInvalido(String.format(MORA_POR_PAGO_VENCIDO, valorAPagar));</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        if(valorAbono &lt; valorAPagar) {</span>
+<span class="fc" id="L87">            throw new ExcepcionValorInvalido(String.format(MORA_POR_PAGO_VENCIDO, valorAPagar));</span>
         }
-<span class="fc" id="L91">    }</span>
+<span class="fc" id="L89">    }</span>
 
     private int calcularValorAPagar(int valorPrestamo, int valorDebe, LocalDate fechaPago){
-<span class="fc" id="L94">        int valorAPagar = 0;</span>
-<span class="pc bpc" id="L95" title="2 of 6 branches missed.">        if((valorPrestamo == valorDebe) &amp;&amp; (fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL)) ){</span>
-<span class="fc" id="L96">            valorAPagar = (int) (valorPrestamo*(1-(PORCENTAJE_DESCUENTO_PAGO_ANTICIPADO*0.01)));</span>
-<span class="pc bpc" id="L97" title="1 of 2 branches missed.">        }else if (fechaPago.isBefore(FECHA_ACTUAL)){</span>
-<span class="fc" id="L98">            valorAPagar = (int) (valorDebe*(1+(PORCENTAJE_MORA_PAGO_VENCIDO*0.01)));</span>
-        }else{
-<span class="nc" id="L100">            valorAPagar = valorDebe;</span>
+<span class="fc" id="L92">        int valorAPagar = valorDebe;</span>
+<span class="pc bpc" id="L93" title="2 of 6 branches missed.">        if((valorPrestamo == valorDebe) &amp;&amp; (fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL)) ){</span>
+<span class="fc" id="L94">            valorAPagar = (int) (valorPrestamo*(1-(PORCENTAJE_DESCUENTO_PAGO_ANTICIPADO*0.01)));</span>
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">        }else if (fechaPago.isBefore(FECHA_ACTUAL)){</span>
+<span class="fc" id="L96">            valorAPagar = (int) (valorDebe*(1+(PORCENTAJE_MORA_PAGO_VENCIDO*0.01)));</span>
         }
-<span class="fc" id="L102">        return valorAPagar;</span>
+<span class="fc" id="L98">        return valorAPagar;</span>
     }
 
 

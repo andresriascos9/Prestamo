@@ -61,11 +61,9 @@ public class ServicioCrearAbono {
             reglaUnSoloPagoAntesDeFechaObtieneDescuento(valorAPagar, valorAbono);
         }else if(fechaPago.isBefore(FECHA_ACTUAL)){
             reglaPagoDespuesDeFechaObtieneMoraEnSaldo(valorAPagar, valorAbono);
-        }if(valorAPagar < valorAbono) {
+        }else if(valorAPagar < valorAbono) {
             throw new ExcepcionValorInvalido(EL_ABONO_ES_MAYOR_AL_PRESTAMO);
-        }else
-        //validamos si está el pago total del prestamo para cambiar el estado
-        if(valorAPagar == valorAbono){
+        }else if(valorAPagar == valorAbono){
             actualizarEstadoPrestamoPorPagoTotal(prestamo);
         }
     }
@@ -91,13 +89,11 @@ public class ServicioCrearAbono {
     }
 
     private int calcularValorAPagar(int valorPrestamo, int valorDebe, LocalDate fechaPago){
-        int valorAPagar = 0;
+        int valorAPagar = valorDebe;
         if((valorPrestamo == valorDebe) && (fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL)) ){
             valorAPagar = (int) (valorPrestamo*(1-(PORCENTAJE_DESCUENTO_PAGO_ANTICIPADO*0.01)));
         }else if (fechaPago.isBefore(FECHA_ACTUAL)){
             valorAPagar = (int) (valorDebe*(1+(PORCENTAJE_MORA_PAGO_VENCIDO*0.01)));
-        }else{
-            valorAPagar = valorDebe;
         }
         return valorAPagar;
     }

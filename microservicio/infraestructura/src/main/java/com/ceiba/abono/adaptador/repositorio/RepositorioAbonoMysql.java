@@ -30,12 +30,7 @@ public class RepositorioAbonoMysql implements RepositorioAbono {
     public int sumarAbonos(Long prestamo){
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("prestamo", prestamo);
-        try{
-            return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlSumaAbonos,paramSource, Integer.class);
-        }catch (Exception NullPointerException){
-            return 0;
-        }
-
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlSumaAbonos,paramSource, Integer.class);
     }
 
 }

@@ -1,1 +1,1 @@
-SELECT SUM(valor_abono) FROM abonos WHERE prestamo = :prestamo;
+SELECT COALESCE(SUM(valor_abono), 0) FROM abonos WHERE prestamo = :prestamo;
