@@ -19,13 +19,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ServicioCrearPrestamoTest {
 
     @Test
-    @DisplayName("Deberia Crear el usuario de manera correcta")
+    @DisplayName("Deberia Crear el prestamo de manera correcta")
     void deberiaCrearElPrestamoDeManeraCorrecta() {
         // arrange
         Prestamo prestamo = new PrestamoTestDataBuilder().build();
         RepositorioPrestamo repositorioPrestamo = Mockito.mock(RepositorioPrestamo.class);
         RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
-        Mockito.when(repositorioPrestamo.existePorId(Mockito.anyLong())).thenReturn(false);
+        Mockito.when(repositorioPersona.existePersonaPorId(Mockito.anyLong())).thenReturn(true);
         Mockito.when(repositorioPrestamo.crear(prestamo)).thenReturn(10L);
         ServicioCrearPrestamo servicioCrearPrestamo = new ServicioCrearPrestamo(repositorioPrestamo, repositorioPersona);
         // act

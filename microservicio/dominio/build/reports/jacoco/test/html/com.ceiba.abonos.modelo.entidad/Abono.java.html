@@ -12,25 +12,25 @@ public class Abono {
     private static final String VALOR_ABONO_DEBE_SER_POSITIVO = &quot;El valor del abono debe ser positivo&quot;;
     private static final String SE_DEBE_INGRESAR_ID_PRESTAMO= &quot;Se debe ingresar el id deL prestamo&quot;;
     private static final String PRESTAMO_DEBE_SER_POSITIVO = &quot;El id deL prestamo debe ser positivo&quot;;
-<span class="nc" id="L15">    private static final LocalDate fechaActual = LocalDate.now();</span>
+<span class="fc" id="L15">    private static final LocalDate fechaActual = LocalDate.now();</span>
 
 <span class="nc" id="L17">    private Long id;</span>
-<span class="nc" id="L18">    private LocalDate fechaAbono;</span>
-<span class="nc" id="L19">    private int valorAbono;</span>
-<span class="nc" id="L20">    private Long prestamo;</span>
+<span class="fc" id="L18">    private LocalDate fechaAbono;</span>
+<span class="fc" id="L19">    private int valorAbono;</span>
+<span class="fc" id="L20">    private Long prestamo;</span>
 
-<span class="nc" id="L22">    public Abono (Long id, int valorAbono, Long prestamo){</span>
+<span class="fc" id="L22">    public Abono (Long id, int valorAbono, Long prestamo){</span>
 
-<span class="nc" id="L24">        validarObligatorio(prestamo,SE_DEBE_INGRESAR_ID_PRESTAMO);</span>
-<span class="nc" id="L25">        validarPositivo((double) valorAbono,VALOR_ABONO_DEBE_SER_POSITIVO);</span>
-<span class="nc" id="L26">        validarPositivo((double) prestamo,PRESTAMO_DEBE_SER_POSITIVO);</span>
+<span class="fc" id="L24">        validarObligatorio(prestamo,SE_DEBE_INGRESAR_ID_PRESTAMO);</span>
+<span class="fc" id="L25">        validarPositivo((double) valorAbono,VALOR_ABONO_DEBE_SER_POSITIVO);</span>
+<span class="fc" id="L26">        validarPositivo((double) prestamo,PRESTAMO_DEBE_SER_POSITIVO);</span>
 
-<span class="nc" id="L28">        this.id = id;</span>
-<span class="nc" id="L29">        this.fechaAbono = fechaActual;</span>
-<span class="nc" id="L30">        this.valorAbono = valorAbono;</span>
-<span class="nc" id="L31">        this.prestamo = prestamo;</span>
+<span class="fc" id="L28">        this.id = id;</span>
+<span class="fc" id="L29">        this.fechaAbono = fechaActual;</span>
+<span class="fc" id="L30">        this.valorAbono = valorAbono;</span>
+<span class="fc" id="L31">        this.prestamo = prestamo;</span>
 
-<span class="nc" id="L33">    }</span>
+<span class="fc" id="L33">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

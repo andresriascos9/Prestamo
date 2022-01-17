@@ -23,14 +23,14 @@ public class ConsultaControladorAbono {
     @GetMapping
     @ApiOperation(&quot;Listar Abonos&quot;)
     public List&lt;DtoAbono&gt; listar() {
-<span class="nc" id="L26">        return this.manejadorListarAbonos.ejecutar();</span>
+<span class="fc" id="L26">        return this.manejadorListarAbonos.ejecutar();</span>
     }
 
 
     @GetMapping(value=&quot;/{prestamo}&quot;)
     @ApiOperation(&quot;Listar Abonos de un prestamo&quot;)
     public List&lt;DtoAbono&gt; listarAbonosPorPrestamo(@PathVariable Long prestamo) {
-<span class="nc" id="L33">            return this.manejadorListarAbonos.consultaPorPrestamo(prestamo);</span>
+<span class="fc" id="L33">            return this.manejadorListarAbonos.consultaPorPrestamo(prestamo);</span>
         }
 
 

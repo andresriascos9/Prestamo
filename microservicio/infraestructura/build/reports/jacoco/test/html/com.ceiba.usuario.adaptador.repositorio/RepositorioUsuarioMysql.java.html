@@ -33,36 +33,36 @@ public class RepositorioUsuarioMysql implements RepositorioUsuario {
 
     @Override
     public Long crear(Usuario usuario) {
-<span class="nc" id="L36">        return this.customNamedParameterJdbcTemplate.crear(usuario, sqlCrear);</span>
+<span class="fc" id="L36">        return this.customNamedParameterJdbcTemplate.crear(usuario, sqlCrear);</span>
     }
 
     @Override
     public void eliminar(Long id) {
-<span class="nc" id="L41">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L42">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L41">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L42">        paramSource.addValue(&quot;id&quot;, id);</span>
 
-<span class="nc" id="L44">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-<span class="nc" id="L45">    }</span>
+<span class="fc" id="L44">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
+<span class="fc" id="L45">    }</span>
 
     @Override
     public boolean existe(String nombre) {
-<span class="nc" id="L49">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L50">        paramSource.addValue(&quot;nombre&quot;, nombre);</span>
+<span class="fc" id="L49">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L50">        paramSource.addValue(&quot;nombre&quot;, nombre);</span>
 
-<span class="nc" id="L52">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);</span>
+<span class="fc" id="L52">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);</span>
     }
 
     @Override
     public void actualizar(Usuario usuario) {
-<span class="nc" id="L57">        this.customNamedParameterJdbcTemplate.actualizar(usuario, sqlActualizar);</span>
-<span class="nc" id="L58">    }</span>
+<span class="fc" id="L57">        this.customNamedParameterJdbcTemplate.actualizar(usuario, sqlActualizar);</span>
+<span class="fc" id="L58">    }</span>
 
     @Override
     public boolean existePorId(Long id) {
-<span class="nc" id="L62">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L63">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L62">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L63">        paramSource.addValue(&quot;id&quot;, id);</span>
 
-<span class="nc" id="L65">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);</span>
+<span class="fc" id="L65">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -21,8 +21,8 @@ public class ManejadorCrearUsuario implements ManejadorComandoRespuesta&lt;Coman
 <span class="fc" id="L21">    }</span>
 
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoUsuario comandoUsuario) {
-<span class="nc" id="L24">        Usuario usuario = this.fabricaUsuario.crear(comandoUsuario);</span>
-<span class="nc" id="L25">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearUsuario.ejecutar(usuario));</span>
+<span class="fc" id="L24">        Usuario usuario = this.fabricaUsuario.crear(comandoUsuario);</span>
+<span class="fc" id="L25">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearUsuario.ejecutar(usuario));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

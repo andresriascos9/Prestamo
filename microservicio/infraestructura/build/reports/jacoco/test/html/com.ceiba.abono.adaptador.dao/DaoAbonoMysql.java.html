@@ -28,14 +28,14 @@ public class DaoAbonoMysql implements DaoAbono {
 
     @Override
     public List&lt;DtoAbono&gt; listar() {
-<span class="nc" id="L31">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoAbono());</span>
+<span class="fc" id="L31">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoAbono());</span>
     }
 
     @Override
     public List&lt;DtoAbono&gt; listarPorPrestamo(Long prestamo) {
-<span class="nc" id="L36">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L37">        paramSource.addValue(&quot;prestamo&quot;, prestamo);</span>
-<span class="nc" id="L38">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPorPrestamo, paramSource, new MapeoAbono());</span>
+<span class="fc" id="L36">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L37">        paramSource.addValue(&quot;prestamo&quot;, prestamo);</span>
+<span class="fc" id="L38">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListarPorPrestamo, paramSource, new MapeoAbono());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

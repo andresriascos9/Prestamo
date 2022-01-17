@@ -8,17 +8,17 @@ import com.ceiba.abonos.modelo.dto.DtoAbono;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import org.springframework.jdbc.core.RowMapper;
 
-<span class="nc" id="L11">public class MapeoAbono implements RowMapper&lt;DtoAbono&gt;, MapperResult{</span>
+<span class="fc" id="L11">public class MapeoAbono implements RowMapper&lt;DtoAbono&gt;, MapperResult{</span>
 
     @Override
     public DtoAbono mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L16">        Long id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L17">        LocalDate fechaAbono = extraerLocalDate(resultSet, &quot;fecha_abono&quot;);</span>
-<span class="nc" id="L18">        int valorAbono = resultSet.getInt(&quot;valor_abono&quot;);</span>
-<span class="nc" id="L19">        Long prestamo = resultSet.getLong(&quot;prestamo&quot;);</span>
+<span class="fc" id="L16">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L17">        LocalDate fechaAbono = extraerLocalDate(resultSet, &quot;fecha_abono&quot;);</span>
+<span class="fc" id="L18">        int valorAbono = resultSet.getInt(&quot;valor_abono&quot;);</span>
+<span class="fc" id="L19">        Long prestamo = resultSet.getLong(&quot;prestamo&quot;);</span>
 
-<span class="nc" id="L21">        return new DtoAbono(id,fechaAbono,valorAbono,prestamo);</span>
+<span class="fc" id="L21">        return new DtoAbono(id,fechaAbono,valorAbono,prestamo);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

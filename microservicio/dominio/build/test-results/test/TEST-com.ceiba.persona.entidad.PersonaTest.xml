@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.persona.entidad.PersonaTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-17T12:25:12" hostname="CARLOS-RIASCO" time="0.005">
+  <properties/>
+  <testcase name="deberiaFallarSinNombre()" classname="com.ceiba.persona.entidad.PersonaTest" time="0.001"/>
+  <testcase name="deberiaFallarConIdentificacionNegativo()" classname="com.ceiba.persona.entidad.PersonaTest" time="0.002"/>
+  <testcase name="Deberia crear correctamente la persona" classname="com.ceiba.persona.entidad.PersonaTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
