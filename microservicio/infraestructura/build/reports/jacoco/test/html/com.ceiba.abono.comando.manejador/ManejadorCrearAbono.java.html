@@ -20,8 +20,8 @@ public class ManejadorCrearAbono implements ManejadorComandoRespuesta&lt;Comando
 <span class="fc" id="L20">    }</span>
 
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoAbono comandoAbono) {
-<span class="nc" id="L23">        Abono abono = this.fabricaAbono.crear(comandoAbono);</span>
-<span class="nc" id="L24">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearAbono.ejecutar(abono));</span>
+<span class="fc" id="L23">        Abono abono = this.fabricaAbono.crear(comandoAbono);</span>
+<span class="fc" id="L24">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearAbono.ejecutar(abono));</span>
     }
 
 }

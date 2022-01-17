@@ -38,7 +38,7 @@ public class RepositorioPrestamoMysql implements RepositorioPrestamo {
 
     @Override
     public Long crear(Prestamo prestamo) {
-<span class="nc" id="L41">        return this.customNamedParameterJdbcTemplate.crear(prestamo, sqlCrear);</span>
+<span class="fc" id="L41">        return this.customNamedParameterJdbcTemplate.crear(prestamo, sqlCrear);</span>
     }
 
     @Override
@@ -49,30 +49,30 @@ public class RepositorioPrestamoMysql implements RepositorioPrestamo {
 
     @Override
     public boolean existePorId(Long id) {
-<span class="nc" id="L52">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L53">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L54">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);</span>
+<span class="fc" id="L52">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L53">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L54">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);</span>
     }
 
     @Override
     public boolean obtenerEstadoPrestamo(Long id) {
-<span class="nc" id="L59">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L60">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L61">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerEstadoPrestamo,paramSource, Boolean.class);</span>
+<span class="fc" id="L59">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L60">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L61">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerEstadoPrestamo,paramSource, Boolean.class);</span>
     }
 
     @Override
     public boolean existePersonaPorIdConPrestamoSinCancelar(Long persona) {
-<span class="nc" id="L66">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L67">        paramSource.addValue(&quot;persona&quot;, persona);</span>
-<span class="nc" id="L68">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlexistePersonaPorId,paramSource, Boolean.class);</span>
+<span class="fc" id="L66">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L67">        paramSource.addValue(&quot;persona&quot;, persona);</span>
+<span class="fc" id="L68">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlexistePersonaPorId,paramSource, Boolean.class);</span>
     }
 
     @Override
     public DtoPrestamo obteneroPrestamo(Long prestamo){
-<span class="nc" id="L73">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L74">        paramSource.addValue(&quot;prestamo&quot;, prestamo);</span>
-<span class="nc" id="L75">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPrestamo,paramSource,new MapeoPrestamo());</span>
+<span class="fc" id="L73">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L74">        paramSource.addValue(&quot;prestamo&quot;, prestamo);</span>
+<span class="fc" id="L75">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPrestamo,paramSource,new MapeoPrestamo());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -7,16 +7,16 @@ import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.persona.modelo.dto.DtoPersona;
 import org.springframework.jdbc.core.RowMapper;
 
-<span class="fc" id="L10">public class MapeoPersona implements RowMapper&lt;DtoPersona&gt;, MapperResult{</span>
+<span class="nc" id="L10">public class MapeoPersona implements RowMapper&lt;DtoPersona&gt;, MapperResult{</span>
 
     @Override
     public DtoPersona mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="fc" id="L15">        Long id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="fc" id="L16">        int identificacion = resultSet.getInt(&quot;identificacion&quot;);</span>
-<span class="fc" id="L17">        String nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="nc" id="L15">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L16">        int identificacion = resultSet.getInt(&quot;identificacion&quot;);</span>
+<span class="nc" id="L17">        String nombre = resultSet.getString(&quot;nombre&quot;);</span>
 
-<span class="fc" id="L19">        return new DtoPersona(id,identificacion,nombre);</span>
+<span class="nc" id="L19">        return new DtoPersona(id,identificacion,nombre);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

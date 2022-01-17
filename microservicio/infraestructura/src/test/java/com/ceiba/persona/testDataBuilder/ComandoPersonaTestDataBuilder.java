@@ -14,16 +14,6 @@ public class ComandoPersonaTestDataBuilder {
         nombre = UUID.randomUUID().toString();
     }
 
-    public ComandoPersonaTestDataBuilder conNombre(String nombre) {
-        this.nombre = nombre;
-        return this;
-    }
-
-    public ComandoPersonaTestDataBuilder conIdentificacion(int identificacion) {
-        this.identificacion = identificacion;
-        return this;
-    }
-
     public ComandoPersona build() {
         return new ComandoPersona(id,identificacion, nombre);
     }

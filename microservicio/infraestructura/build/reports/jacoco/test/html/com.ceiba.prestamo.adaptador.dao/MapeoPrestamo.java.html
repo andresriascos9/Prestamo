@@ -8,18 +8,18 @@ import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.prestamo.modelo.dto.DtoPrestamo;
 import org.springframework.jdbc.core.RowMapper;
 
-<span class="nc" id="L11">public class MapeoPrestamo implements RowMapper&lt;DtoPrestamo&gt;, MapperResult{</span>
+<span class="fc" id="L11">public class MapeoPrestamo implements RowMapper&lt;DtoPrestamo&gt;, MapperResult{</span>
 
     @Override
     public DtoPrestamo mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L16">        Long id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L17">        LocalDate fechaPago = extraerLocalDate(resultSet, &quot;fecha_pago&quot;);</span>
-<span class="nc" id="L18">        int valorPrestamo = resultSet.getInt(&quot;valor_prestamo&quot;);</span>
-<span class="nc" id="L19">        Long persona = resultSet.getLong(&quot;persona&quot;);</span>
-<span class="nc" id="L20">        boolean estadoPrestamoPago = resultSet.getBoolean(&quot;estado_prestamo_pago&quot;);</span>
+<span class="fc" id="L16">        Long id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L17">        LocalDate fechaPago = extraerLocalDate(resultSet, &quot;fecha_pago&quot;);</span>
+<span class="fc" id="L18">        int valorPrestamo = resultSet.getInt(&quot;valor_prestamo&quot;);</span>
+<span class="fc" id="L19">        Long persona = resultSet.getLong(&quot;persona&quot;);</span>
+<span class="fc" id="L20">        boolean estadoPrestamoPago = resultSet.getBoolean(&quot;estado_prestamo_pago&quot;);</span>
 
-<span class="nc" id="L22">        return new DtoPrestamo(id,fechaPago,valorPrestamo,persona,estadoPrestamoPago);</span>
+<span class="fc" id="L22">        return new DtoPrestamo(id,fechaPago,valorPrestamo,persona,estadoPrestamoPago);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

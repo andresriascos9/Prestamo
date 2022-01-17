@@ -20,8 +20,8 @@ public class ManejadorCrearPrestamo implements ManejadorComandoRespuesta&lt;Coma
 <span class="fc" id="L20">    }</span>
 
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPrestamo comandoPrestamo) {
-<span class="nc" id="L23">        Prestamo prestamo = this.fabricaPrestamo.crear(comandoPrestamo);</span>
-<span class="nc" id="L24">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPrestamo.ejecutar(prestamo));</span>
+<span class="fc" id="L23">        Prestamo prestamo = this.fabricaPrestamo.crear(comandoPrestamo);</span>
+<span class="fc" id="L24">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPrestamo.ejecutar(prestamo));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

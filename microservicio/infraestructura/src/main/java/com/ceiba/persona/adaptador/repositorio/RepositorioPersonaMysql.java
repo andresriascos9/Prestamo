@@ -18,6 +18,9 @@ public class RepositorioPersonaMysql implements RepositorioPersona{
     @SqlStatement(namespace="persona", value="existe")
     private static String sqlExiste;
 
+    @SqlStatement(namespace="persona", value="existePorId")
+    private static String sqlExistePorId;
+
     public RepositorioPersonaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -31,8 +34,14 @@ public class RepositorioPersonaMysql implements RepositorioPersona{
     public boolean existe(int identificacion) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("identificacion", identificacion);
-
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
+    }
+
+    @Override
+    public boolean existePersonaPorId(Long persona) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", persona);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);
     }
 
 }

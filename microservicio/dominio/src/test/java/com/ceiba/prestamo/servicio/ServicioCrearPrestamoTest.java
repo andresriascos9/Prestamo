@@ -24,9 +24,10 @@ public class ServicioCrearPrestamoTest {
         // arrange
         Prestamo prestamo = new PrestamoTestDataBuilder().build();
         RepositorioPrestamo repositorioPrestamo = Mockito.mock(RepositorioPrestamo.class);
+        RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
         Mockito.when(repositorioPrestamo.existePorId(Mockito.anyLong())).thenReturn(false);
         Mockito.when(repositorioPrestamo.crear(prestamo)).thenReturn(10L);
-        ServicioCrearPrestamo servicioCrearPrestamo = new ServicioCrearPrestamo(repositorioPrestamo);
+        ServicioCrearPrestamo servicioCrearPrestamo = new ServicioCrearPrestamo(repositorioPrestamo, repositorioPersona);
         // act
         Long idPrestamo = servicioCrearPrestamo.ejecutar(prestamo);
         //- assert
@@ -40,8 +41,9 @@ public class ServicioCrearPrestamoTest {
         // arrange
         Prestamo prestamo = new PrestamoTestDataBuilder().build();
         RepositorioPrestamo repositorioPrestamo = Mockito.mock(RepositorioPrestamo.class);
+        RepositorioPersona repositorioPersona = Mockito.mock(RepositorioPersona.class);
         Mockito.doReturn(true).when(repositorioPrestamo).existePersonaPorIdConPrestamoSinCancelar(prestamo.getPersona());
-        ServicioCrearPrestamo servicioCrearPrestamo = new ServicioCrearPrestamo(repositorioPrestamo);
+        ServicioCrearPrestamo servicioCrearPrestamo = new ServicioCrearPrestamo(repositorioPrestamo, repositorioPersona);
         // act - assert
         BasePrueba.assertThrows(() -> servicioCrearPrestamo.ejecutar(prestamo),
                 ExcepcionDuplicidad.class,"La persona ya tiene un prestamo sin cancelar");

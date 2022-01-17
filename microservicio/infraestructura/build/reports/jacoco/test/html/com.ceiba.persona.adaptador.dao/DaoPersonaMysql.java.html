@@ -23,7 +23,7 @@ public class DaoPersonaMysql implements DaoPersona {
 
     @Override
     public List&lt;DtoPersona&gt; listar() {
-<span class="fc" id="L26">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPersona());</span>
+<span class="nc" id="L26">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPersona());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

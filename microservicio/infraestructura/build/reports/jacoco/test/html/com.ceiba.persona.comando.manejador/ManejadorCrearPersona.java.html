@@ -21,8 +21,8 @@ public class ManejadorCrearPersona implements ManejadorComandoRespuesta&lt;Coman
 <span class="fc" id="L21">    }</span>
 
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPersona comandoPersona) {
-<span class="nc" id="L24">        Persona persona = this.fabricaPersona.crear(comandoPersona);</span>
-<span class="nc" id="L25">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPersona.ejecutar(persona));</span>
+<span class="fc" id="L24">        Persona persona = this.fabricaPersona.crear(comandoPersona);</span>
+<span class="fc" id="L25">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPersona.ejecutar(persona));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

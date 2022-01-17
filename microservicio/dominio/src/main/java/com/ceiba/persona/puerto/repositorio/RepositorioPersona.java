@@ -17,4 +17,11 @@ public interface RepositorioPersona {
      * @return si existe o no
      */
     boolean existe(int identificacion);
+
+    /**
+     * Permite validar si existe una persona por su identificacion
+     * @param id
+     * @return si existe o no
+     */
+    boolean existePersonaPorId(Long id);
 }

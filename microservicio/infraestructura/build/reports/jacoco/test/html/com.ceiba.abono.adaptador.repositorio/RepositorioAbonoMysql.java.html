@@ -24,13 +24,13 @@ public class RepositorioAbonoMysql implements RepositorioAbono {
 
     @Override
     public Long crear(Abono abono) {
-<span class="nc" id="L27">        return this.customNamedParameterJdbcTemplate.crear(abono, sqlCrear);</span>
+<span class="fc" id="L27">        return this.customNamedParameterJdbcTemplate.crear(abono, sqlCrear);</span>
     }
 
     public int sumarAbonos(Long prestamo){
-<span class="nc" id="L31">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L32">        paramSource.addValue(&quot;prestamo&quot;, prestamo);</span>
-<span class="nc" id="L33">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlSumaAbonos,paramSource, Integer.class);</span>
+<span class="fc" id="L31">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L32">        paramSource.addValue(&quot;prestamo&quot;, prestamo);</span>
+<span class="fc" id="L33">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlSumaAbonos,paramSource, Integer.class);</span>
     }
 
 }
