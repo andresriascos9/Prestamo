@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/abonos")
+@CrossOrigin(origins = "*")
 @Api(tags={"Controlador consulta abonos"})
 public class ConsultaControladorAbono {
 

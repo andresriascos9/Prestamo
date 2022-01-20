@@ -6,8 +6,6 @@ import com.ceiba.prestamo.modelo.entidad.Prestamo;
 import com.ceiba.prestamo.puerto.repositorio.RepositorioPrestamo;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 
-import java.time.LocalDate;
-
 public class ServicioCrearPrestamo {
 
     private static final String EL_PRESTAMO_YA_EXISTE_EN_EL_SISTEMA = "La persona ya tiene un prestamo sin cancelar";

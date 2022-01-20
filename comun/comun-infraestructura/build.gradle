@@ -12,7 +12,9 @@ repositories {
 dependencies {
 
 	implementation project.ext.springbootweb
-	runtimeOnly project.ext.springdevtools
+    implementation 'javax.xml.rpc:javax.xml.rpc-api:1.1.2'
+    implementation 'javax.xml:jsr173:1.0'
+    runtimeOnly project.ext.springdevtools
 	
 	implementation project.ext.springbootjdbc
 

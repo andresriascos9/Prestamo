@@ -11,26 +11,27 @@ import java.util.List;
 
 @RestController
 @RequestMapping(&quot;/abonos&quot;)
+@CrossOrigin(origins = &quot;*&quot;)
 @Api(tags={&quot;Controlador consulta abonos&quot;})
 public class ConsultaControladorAbono {
 
     private final ManejadorListarAbonos manejadorListarAbonos;
 
-<span class="fc" id="L19">    public ConsultaControladorAbono(ManejadorListarAbonos manejadorListarAbonos) {</span>
-<span class="fc" id="L20">        this.manejadorListarAbonos = manejadorListarAbonos;</span>
-<span class="fc" id="L21">    }</span>
+<span class="fc" id="L20">    public ConsultaControladorAbono(ManejadorListarAbonos manejadorListarAbonos) {</span>
+<span class="fc" id="L21">        this.manejadorListarAbonos = manejadorListarAbonos;</span>
+<span class="fc" id="L22">    }</span>
 
     @GetMapping
     @ApiOperation(&quot;Listar Abonos&quot;)
     public List&lt;DtoAbono&gt; listar() {
-<span class="fc" id="L26">        return this.manejadorListarAbonos.ejecutar();</span>
+<span class="fc" id="L27">        return this.manejadorListarAbonos.ejecutar();</span>
     }
 
 
     @GetMapping(value=&quot;/{prestamo}&quot;)
     @ApiOperation(&quot;Listar Abonos de un prestamo&quot;)
     public List&lt;DtoAbono&gt; listarAbonosPorPrestamo(@PathVariable Long prestamo) {
-<span class="fc" id="L33">            return this.manejadorListarAbonos.consultaPorPrestamo(prestamo);</span>
+<span class="fc" id="L34">            return this.manejadorListarAbonos.consultaPorPrestamo(prestamo);</span>
         }
 
 

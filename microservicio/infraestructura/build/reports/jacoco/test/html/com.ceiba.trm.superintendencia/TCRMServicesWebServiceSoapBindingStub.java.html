@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TCRMServicesWebServiceSoapBindingStub.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.trm.superintendencia</a> &gt; <span class="el_source">TCRMServicesWebServiceSoapBindingStub.java</span></div><h1>TCRMServicesWebServiceSoapBindingStub.java</h1><pre class="source lang-java linenums">package com.ceiba.trm.superintendencia;
+
+import org.apache.axis.AxisEngine;
+import org.apache.axis.AxisFault;
+import org.apache.axis.NoEndPointException;
+import org.apache.axis.client.Call;
+import org.apache.axis.client.Service;
+import org.apache.axis.client.Stub;
+import org.apache.axis.constants.Style;
+import org.apache.axis.constants.Use;
+import org.apache.axis.description.OperationDesc;
+import org.apache.axis.description.ParameterDesc;
+import org.apache.axis.encoding.ser.BeanDeserializerFactory;
+import org.apache.axis.encoding.ser.BeanSerializerFactory;
+import org.apache.axis.soap.SOAPConstants;
+import org.apache.axis.utils.JavaUtils;
+
+import javax.xml.namespace.QName;
+import java.net.URL;
+import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Enumeration;
+import java.util.List;
+
+public class TCRMServicesWebServiceSoapBindingStub extends Stub implements TCRMServicesInterface {
+    private static final String NAMESPACE_URI = &quot;http://action.trm.services.generic.action.superfinanciera.nexura.sc.com.co/&quot;;
+    private static final String W3_XMLSCHEMA = &quot;http://www.w3.org/2001/XMLSchema&quot;;
+    static OperationDesc[] operations;
+
+    static {
+<span class="fc" id="L32">        operations = new OperationDesc[1];</span>
+<span class="fc" id="L33">        initOperationDesc1();</span>
+<span class="fc" id="L34">    }</span>
+
+<span class="fc" id="L36">    private final List&lt;Class&gt; cachedSerClasses = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L37">    private final List&lt;QName&gt; cachedSerQNames = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L38">    private final List&lt;Class&lt;BeanSerializerFactory&gt;&gt; cachedSerializerFactories = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L39">    private final List&lt;Class&lt;BeanDeserializerFactory&gt;&gt; cachedDeserializerFactories = new ArrayList&lt;&gt;();</span>
+
+    public TCRMServicesWebServiceSoapBindingStub(URL endpointURL, Service service) {
+<span class="fc" id="L42">        this(service);</span>
+<span class="fc" id="L43">        super.cachedEndpoint = endpointURL;</span>
+<span class="fc" id="L44">    }</span>
+
+<span class="fc" id="L46">    public TCRMServicesWebServiceSoapBindingStub(Service service) {</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">        if (service == null) {</span>
+<span class="nc" id="L48">            super.service = new Service();</span>
+        } else {
+<span class="fc" id="L50">            super.service = service;</span>
+        }
+<span class="fc" id="L52">        ((Service) super.service).setTypeMappingVersion(&quot;1.2&quot;);</span>
+
+<span class="fc" id="L54">        QName qName = new QName(NAMESPACE_URI, &quot;tcrm&quot;);</span>
+
+<span class="fc" id="L56">        Class cls = Tcrm.class;</span>
+<span class="fc" id="L57">        Class&lt;BeanSerializerFactory&gt; beanSerializerFactory = BeanSerializerFactory.class;</span>
+<span class="fc" id="L58">        Class&lt;BeanDeserializerFactory&gt; beanDeserializerFactory = BeanDeserializerFactory.class;</span>
+
+
+<span class="fc" id="L61">        cachedSerQNames.add(qName);</span>
+
+<span class="fc" id="L63">        cachedSerClasses.add(cls);</span>
+<span class="fc" id="L64">        cachedSerializerFactories.add(beanSerializerFactory);</span>
+<span class="fc" id="L65">        cachedDeserializerFactories.add(beanDeserializerFactory);</span>
+
+<span class="fc" id="L67">        qName = new QName(NAMESPACE_URI, &quot;tcrmResponse&quot;);</span>
+<span class="fc" id="L68">        cachedSerQNames.add(qName);</span>
+<span class="fc" id="L69">        cls = TcrmResponse.class;</span>
+<span class="fc" id="L70">        cachedSerClasses.add(cls);</span>
+<span class="fc" id="L71">        cachedSerializerFactories.add(beanSerializerFactory);</span>
+<span class="fc" id="L72">        cachedDeserializerFactories.add(beanDeserializerFactory);</span>
+
+<span class="fc" id="L74">    }</span>
+
+    private static void initOperationDesc1() {
+<span class="fc" id="L77">        OperationDesc operationDesc = new OperationDesc();</span>
+        ParameterDesc param;
+
+<span class="fc" id="L80">        operationDesc.setName(&quot;queryTCRM&quot;);</span>
+<span class="fc" id="L81">        param = new ParameterDesc(new QName(&quot;&quot;, &quot;tcrmQueryAssociatedDate&quot;), ParameterDesc.IN, new QName(W3_XMLSCHEMA, &quot;dateTime&quot;), Calendar.class, false, false);</span>
+<span class="fc" id="L82">        param.setOmittable(true);</span>
+<span class="fc" id="L83">        operationDesc.addParameter(param);</span>
+<span class="fc" id="L84">        operationDesc.setReturnType(new QName(NAMESPACE_URI, &quot;tcrmResponse&quot;));</span>
+<span class="fc" id="L85">        operationDesc.setReturnClass(TcrmResponse.class);</span>
+<span class="fc" id="L86">        operationDesc.setReturnQName(new QName(&quot;&quot;, &quot;return&quot;));</span>
+<span class="fc" id="L87">        operationDesc.setStyle(Style.WRAPPED);</span>
+<span class="fc" id="L88">        operationDesc.setUse(Use.LITERAL);</span>
+<span class="fc" id="L89">        operations[0] = operationDesc;</span>
+
+<span class="fc" id="L91">    }</span>
+
+    protected Call createCall() throws RemoteException {
+        try {
+<span class="fc" id="L95">            Call call = super._createCall();</span>
+<span class="pc bpc" id="L96" title="1 of 2 branches missed.">            if (super.maintainSessionSet) {</span>
+<span class="nc" id="L97">                call.setMaintainSession(super.maintainSession);</span>
+            }
+<span class="pc bpc" id="L99" title="1 of 2 branches missed.">            if (super.cachedUsername != null) {</span>
+<span class="nc" id="L100">                call.setUsername(super.cachedUsername);</span>
+            }
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">            if (super.cachedPassword != null) {</span>
+<span class="nc" id="L103">                call.setPassword(super.cachedPassword);</span>
+            }
+<span class="pc bpc" id="L105" title="1 of 2 branches missed.">            if (super.cachedEndpoint != null) {</span>
+<span class="fc" id="L106">                call.setTargetEndpointAddress(super.cachedEndpoint);</span>
+            }
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">            if (super.cachedTimeout != null) {</span>
+<span class="nc" id="L109">                call.setTimeout(super.cachedTimeout);</span>
+            }
+<span class="pc bpc" id="L111" title="1 of 2 branches missed.">            if (super.cachedPortName != null) {</span>
+<span class="fc" id="L112">                call.setPortName(super.cachedPortName);</span>
+            }
+
+<span class="fc" id="L115">            Enumeration&lt;Object&gt; keys = super.cachedProperties.keys();</span>
+<span class="pc bpc" id="L116" title="1 of 2 branches missed.">            while (keys.hasMoreElements()) {</span>
+<span class="nc" id="L117">                String key = (String) keys.nextElement();</span>
+<span class="nc" id="L118">                call.setProperty(key, super.cachedProperties.get(key));</span>
+<span class="nc" id="L119">            }</span>
+            //
+            // All the type mapping information is registered
+            // when the first call is made.
+            // The type mapping information is actually registered in
+            // the TypeMappingRegistry of the service, which
+            // is the reason why registration is only needed for the first call.
+<span class="fc" id="L126">            synchronized (this) {</span>
+<span class="pc bpc" id="L127" title="1 of 2 branches missed.">                if (firstCall()) {</span>
+                    //
+                    // Must set encoding style before registering serializers
+<span class="fc" id="L130">                    call.setEncodingStyle(null);</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">                    for (int i = 0; i &lt; cachedSerializerFactories.size(); ++i) {</span>
+<span class="fc" id="L132">                        Class cls = cachedSerClasses.get(i);</span>
+<span class="fc" id="L133">                        QName qName = cachedSerQNames.get(i);</span>
+
+<span class="fc" id="L135">                        Class&lt;BeanSerializerFactory&gt; sf = cachedSerializerFactories.get(i);</span>
+<span class="fc" id="L136">                        Class&lt;BeanDeserializerFactory&gt; df = cachedDeserializerFactories.get(i);</span>
+<span class="fc" id="L137">                        call.registerTypeMapping(cls, qName, sf, df, false);</span>
+                    }
+                }
+<span class="fc" id="L140">            }</span>
+<span class="fc" id="L141">            return call;</span>
+<span class="nc" id="L142">        } catch (Exception e) {</span>
+<span class="nc" id="L143">            throw new AxisFault(&quot;Failure trying to get the Call object&quot;, e);</span>
+        }
+    }
+
+    public TcrmResponse queryTCRM(Calendar trmQueryAssociatedDate) throws RemoteException {
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">        if (super.cachedEndpoint == null) {</span>
+<span class="nc" id="L149">            throw new NoEndPointException();</span>
+        }
+
+<span class="fc" id="L152">        trustVerificationWorkaround();</span>
+
+<span class="fc" id="L154">        Call call = createCall();</span>
+<span class="fc" id="L155">        call.setOperation(operations[0]);</span>
+<span class="fc" id="L156">        call.setUseSOAPAction(true);</span>
+<span class="fc" id="L157">        call.setSOAPActionURI(&quot;&quot;);</span>
+<span class="fc" id="L158">        call.setEncodingStyle(null);</span>
+<span class="fc" id="L159">        call.setProperty(Call.SEND_TYPE_ATTR, Boolean.FALSE);</span>
+<span class="fc" id="L160">        call.setProperty(AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);</span>
+<span class="fc" id="L161">        call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);</span>
+<span class="fc" id="L162">        call.setOperationName(new QName(NAMESPACE_URI, &quot;queryTCRM&quot;));</span>
+
+<span class="fc" id="L164">        setRequestHeaders(call);</span>
+<span class="fc" id="L165">        setAttachments(call);</span>
+
+<span class="fc" id="L167">        Object resp = call.invoke(new Object[]{trmQueryAssociatedDate});</span>
+
+<span class="pc bpc" id="L169" title="1 of 2 branches missed.">        if (resp instanceof RemoteException) {</span>
+<span class="nc" id="L170">            throw (RemoteException) resp;</span>
+        } else {
+<span class="fc" id="L172">            extractAttachments(call);</span>
+<span class="fc" id="L173">            return queryTCRMHelper(resp);</span>
+        }
+    }
+
+    /**
+     * Bypass the HTTPS certificate validations
+     */
+    private void trustVerificationWorkaround() {
+<span class="fc" id="L181">        System.setProperty(&quot;org.apache.axis.components.net.SecureSocketFactory&quot;, &quot;org.apache.axis.components.net.SunFakeTrustSocketFactory&quot;);</span>
+<span class="fc" id="L182">    }</span>
+
+    public TcrmResponse queryTCRMHelper(Object resp) {
+        try {
+<span class="fc" id="L186">            return (TcrmResponse) resp;</span>
+<span class="nc" id="L187">        } catch (Exception e) {</span>
+<span class="nc" id="L188">            return (TcrmResponse) JavaUtils.convert(resp, TcrmResponse.class);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

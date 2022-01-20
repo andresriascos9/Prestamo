@@ -6,8 +6,6 @@ import com.ceiba.prestamo.modelo.entidad.Prestamo;
 import com.ceiba.prestamo.puerto.repositorio.RepositorioPrestamo;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 
-import java.time.LocalDate;
-
 public class ServicioCrearPrestamo {
 
     private static final String EL_PRESTAMO_YA_EXISTE_EN_EL_SISTEMA = &quot;La persona ya tiene un prestamo sin cancelar&quot;;
@@ -16,31 +14,31 @@ public class ServicioCrearPrestamo {
     private final RepositorioPrestamo repositorioPrestamo;
     private final RepositorioPersona repositorioPersona;
 
-<span class="fc" id="L19">    public ServicioCrearPrestamo(RepositorioPrestamo repositorioPrestamo, RepositorioPersona repositorioPersona) {</span>
-<span class="fc" id="L20">        this.repositorioPrestamo = repositorioPrestamo;</span>
-<span class="fc" id="L21">        this.repositorioPersona = repositorioPersona;</span>
-<span class="fc" id="L22">    }</span>
+<span class="fc" id="L17">    public ServicioCrearPrestamo(RepositorioPrestamo repositorioPrestamo, RepositorioPersona repositorioPersona) {</span>
+<span class="fc" id="L18">        this.repositorioPrestamo = repositorioPrestamo;</span>
+<span class="fc" id="L19">        this.repositorioPersona = repositorioPersona;</span>
+<span class="fc" id="L20">    }</span>
 
     public Long ejecutar(Prestamo prestamo) {
-<span class="fc" id="L25">        validarExistenciaPreviaPersonaConPrestamo(prestamo);</span>
-<span class="fc" id="L26">        validarExistenciaPersona(prestamo.getPersona());</span>
-<span class="fc" id="L27">        prestamo.setEstadoPrestamoPago(false);</span>
-<span class="fc" id="L28">        return this.repositorioPrestamo.crear(prestamo);</span>
+<span class="fc" id="L23">        validarExistenciaPreviaPersonaConPrestamo(prestamo);</span>
+<span class="fc" id="L24">        validarExistenciaPersona(prestamo.getPersona());</span>
+<span class="fc" id="L25">        prestamo.setEstadoPrestamoPago(false);</span>
+<span class="fc" id="L26">        return this.repositorioPrestamo.crear(prestamo);</span>
     }
 
     private void validarExistenciaPreviaPersonaConPrestamo(Prestamo prestamo) {
-<span class="fc" id="L32">        boolean existe = this.repositorioPrestamo.existePersonaPorIdConPrestamoSinCancelar(prestamo.getPersona());</span>
-<span class="fc bfc" id="L33" title="All 2 branches covered.">        if(existe) {</span>
-<span class="fc" id="L34">            throw new ExcepcionDuplicidad(EL_PRESTAMO_YA_EXISTE_EN_EL_SISTEMA);</span>
+<span class="fc" id="L30">        boolean existe = this.repositorioPrestamo.existePersonaPorIdConPrestamoSinCancelar(prestamo.getPersona());</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if(existe) {</span>
+<span class="fc" id="L32">            throw new ExcepcionDuplicidad(EL_PRESTAMO_YA_EXISTE_EN_EL_SISTEMA);</span>
         }
-<span class="fc" id="L36">    }</span>
+<span class="fc" id="L34">    }</span>
 
     private void validarExistenciaPersona(Long persona) {
-<span class="fc" id="L39">        boolean existe = this.repositorioPersona.existePersonaPorId(persona);</span>
-<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if(!existe) {</span>
-<span class="nc" id="L41">            throw new ExcepcionValorInvalido(LA_PERSONA_NO_EXISTE_EN_EL_SISTEMA);</span>
+<span class="fc" id="L37">        boolean existe = this.repositorioPersona.existePersonaPorId(persona);</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">        if(!existe) {</span>
+<span class="nc" id="L39">            throw new ExcepcionValorInvalido(LA_PERSONA_NO_EXISTE_EN_EL_SISTEMA);</span>
         }
-<span class="fc" id="L43">    }</span>
+<span class="fc" id="L41">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

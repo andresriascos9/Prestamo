@@ -45,6 +45,11 @@ dependencies {
 
 	implementation project(':comun:comun-infraestructura')
 	implementation project(':comun:comun-aplicacion')
+	implementation project.ext.javax
+	implementation project.ext.apache
+	implementation project.ext.commons_discovery
+	implementation project.ext.wsdl4j
+	implementation project.ext.javax_soap
 }
 
 jacocoTestReport {

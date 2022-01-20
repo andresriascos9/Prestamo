@@ -2,6 +2,7 @@
 
 import com.ceiba.prestamo.consulta.ManejadorListarPrestamos;
 import com.ceiba.prestamo.modelo.dto.DtoPrestamo;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,19 +14,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping(&quot;/prestamos&quot;)
+@CrossOrigin(origins = &quot;*&quot;)
 @Api(tags={&quot;Controlador consulta prestamo&quot;})
 public class ConsultaControladorPrestamo {
 
     private final ManejadorListarPrestamos manejadorListarPrestamos;
 
-<span class="fc" id="L21">    public ConsultaControladorPrestamo(ManejadorListarPrestamos manejadorListarPrestamos) {</span>
-<span class="fc" id="L22">        this.manejadorListarPrestamos = manejadorListarPrestamos;</span>
-<span class="fc" id="L23">    }</span>
+<span class="fc" id="L23">    public ConsultaControladorPrestamo(ManejadorListarPrestamos manejadorListarPrestamos) {</span>
+<span class="fc" id="L24">        this.manejadorListarPrestamos = manejadorListarPrestamos;</span>
+<span class="fc" id="L25">    }</span>
 
     @GetMapping
     @ApiOperation(&quot;Listar Prestamos&quot;)
     public List&lt;DtoPrestamo&gt; listar() {
-<span class="fc" id="L28">        return this.manejadorListarPrestamos.ejecutar();</span>
+<span class="fc" id="L30">        return this.manejadorListarPrestamos.ejecutar();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

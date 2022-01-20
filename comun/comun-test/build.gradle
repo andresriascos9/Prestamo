@@ -10,4 +10,6 @@ repositories {
 dependencies {
 	implementation project.ext.h2
 	implementation project.ext.springboottest
+    implementation 'javax.xml.rpc:javax.xml.rpc-api:1.1.2'
+    implementation 'javax.xml:jsr173:1.0'
 }

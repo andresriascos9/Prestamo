@@ -11,20 +11,21 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(&quot;/abonos&quot;)
+@CrossOrigin(origins = &quot;*&quot;)
 @Api(tags = { &quot;Controlador comando abonos&quot;})
 public class comandoControladorAbono {
 
     private final ManejadorCrearAbono manejadorCrearAbono;
 
     @Autowired
-<span class="fc" id="L20">    public comandoControladorAbono(ManejadorCrearAbono manejadorCrearAbono) {</span>
-<span class="fc" id="L21">        this.manejadorCrearAbono = manejadorCrearAbono;</span>
-<span class="fc" id="L22">    }</span>
+<span class="fc" id="L21">    public comandoControladorAbono(ManejadorCrearAbono manejadorCrearAbono) {</span>
+<span class="fc" id="L22">        this.manejadorCrearAbono = manejadorCrearAbono;</span>
+<span class="fc" id="L23">    }</span>
 
     @PostMapping
     @ApiOperation(&quot;Crear abono&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoAbono comandoAbono) {
-<span class="fc" id="L27">        return manejadorCrearAbono.ejecutar(comandoAbono);</span>
+<span class="fc" id="L28">        return manejadorCrearAbono.ejecutar(comandoAbono);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

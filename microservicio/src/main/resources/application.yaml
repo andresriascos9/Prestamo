@@ -19,3 +19,6 @@ spring:
       password: 
       hikari:
          poolName: pool
+
+superintendencia:
+   end-point: https://www.superfinanciera.gov.co/SuperfinancieraWebServiceTRM/TCRMServicesWebService/TCRMServicesWebService?WSDL

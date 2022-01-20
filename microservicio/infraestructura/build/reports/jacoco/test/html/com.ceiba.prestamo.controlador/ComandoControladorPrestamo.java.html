@@ -11,20 +11,21 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(&quot;/prestamos&quot;)
+@CrossOrigin(origins = &quot;*&quot;)
 @Api(tags = { &quot;Controlador comando prestamo&quot;})
 public class ComandoControladorPrestamo {
 
     private final ManejadorCrearPrestamo manejadorCrearPrestamo;
 
     @Autowired
-<span class="fc" id="L20">    public ComandoControladorPrestamo(ManejadorCrearPrestamo manejadorCrearPrestamo) {</span>
-<span class="fc" id="L21">        this.manejadorCrearPrestamo = manejadorCrearPrestamo;</span>
-<span class="fc" id="L22">    }</span>
+<span class="fc" id="L21">    public ComandoControladorPrestamo(ManejadorCrearPrestamo manejadorCrearPrestamo) {</span>
+<span class="fc" id="L22">        this.manejadorCrearPrestamo = manejadorCrearPrestamo;</span>
+<span class="fc" id="L23">    }</span>
 
     @PostMapping
     @ApiOperation(&quot;Crear Prestamo&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoPrestamo comandoPrestamo) {
-<span class="fc" id="L27">        return manejadorCrearPrestamo.ejecutar(comandoPrestamo);</span>
+<span class="fc" id="L28">        return manejadorCrearPrestamo.ejecutar(comandoPrestamo);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

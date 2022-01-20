@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TcrmResponse.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.trm.superintendencia</a> &gt; <span class="el_source">TcrmResponse.java</span></div><h1>TcrmResponse.java</h1><pre class="source lang-java linenums">package com.ceiba.trm.superintendencia;
+
+import org.apache.axis.description.ElementDesc;
+import org.apache.axis.description.TypeDesc;
+import org.apache.axis.encoding.Deserializer;
+import org.apache.axis.encoding.Serializer;
+import org.apache.axis.encoding.ser.BeanDeserializer;
+import org.apache.axis.encoding.ser.BeanSerializer;
+
+import javax.xml.namespace.QName;
+import java.io.Serializable;
+public class TcrmResponse extends Tcrm implements Serializable{
+    private static final String W3_XMLSCHEMA_URI = &quot;http://www.w3.org/2001/XMLSchema&quot;;
+
+    private static final long serialVersionUID = 1L;
+<span class="fc" id="L16">    private static final TypeDesc typeDesc = new TypeDesc(TcrmResponse.class, true);</span>
+
+    static {
+<span class="fc" id="L19">        typeDesc.setXmlType(new QName(&quot;http://action.trm.services.generic.action.superfinanciera.nexura.sc.com.co/&quot;, &quot;tcrmResponse&quot;));</span>
+<span class="fc" id="L20">        ElementDesc elemField = new ElementDesc();</span>
+<span class="fc" id="L21">        elemField.setFieldName(&quot;message&quot;);</span>
+<span class="fc" id="L22">        elemField.setXmlName(new QName(&quot;&quot;, &quot;message&quot;));</span>
+<span class="fc" id="L23">        elemField.setXmlType(new QName(W3_XMLSCHEMA_URI, &quot;string&quot;));</span>
+<span class="fc" id="L24">        elemField.setMinOccurs(0);</span>
+<span class="fc" id="L25">        elemField.setNillable(false);</span>
+<span class="fc" id="L26">        typeDesc.addFieldDesc(elemField);</span>
+
+<span class="fc" id="L28">        elemField = new ElementDesc();</span>
+<span class="fc" id="L29">        elemField.setFieldName(&quot;success&quot;);</span>
+<span class="fc" id="L30">        elemField.setXmlName(new QName(&quot;&quot;, &quot;success&quot;));</span>
+<span class="fc" id="L31">        elemField.setXmlType(new QName(W3_XMLSCHEMA_URI, &quot;boolean&quot;));</span>
+<span class="fc" id="L32">        elemField.setMinOccurs(0);</span>
+<span class="fc" id="L33">        elemField.setNillable(false);</span>
+<span class="fc" id="L34">        typeDesc.addFieldDesc(elemField);</span>
+<span class="fc" id="L35">    }</span>
+
+    private String message;
+    private Boolean success;
+
+    /**
+     * Empty constructor. Please do not delete. Is used by introspection.
+     */
+<span class="fc" id="L43">    public TcrmResponse() {</span>
+        //
+        // Empty constructor used by introspection
+<span class="fc" id="L46">    }</span>
+
+    /**
+     * Return type metadata object
+     */
+    public static TypeDesc getTypeDesc() {
+<span class="fc" id="L52">        return typeDesc;</span>
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static Serializer getSerializer( Class&lt;?&gt; javaType, QName xmlType) {
+<span class="nc" id="L59">        return new BeanSerializer(javaType, xmlType, typeDesc);</span>
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static Deserializer getDeserializer( Class&lt;?&gt; javaType, QName xmlType) {
+<span class="nc" id="L66">        return new BeanDeserializer(javaType, xmlType, typeDesc);</span>
+    }
+
+    /**
+     * Gets the message value for this TcrmResponse.
+     *
+     * @return message
+     */
+    public String getMessage() {
+<span class="nc" id="L75">        return message;</span>
+    }
+
+    /**
+     * Sets the message value for this TcrmResponse.
+     *
+     * @param message message to set
+     */
+    public void setMessage(String message) {
+<span class="nc" id="L84">        this.message = message;</span>
+<span class="nc" id="L85">    }</span>
+
+    /**
+     * Gets the success value for this TcrmResponse.
+     *
+     * @return success
+     */
+    public Boolean getSuccess() {
+<span class="nc" id="L93">        return success;</span>
+    }
+
+    /**
+     * Sets the success value for this TcrmResponse.
+     *
+     * @param success the flag to set
+     */
+    public void setSuccess(Boolean success) {
+<span class="fc" id="L102">        this.success = success;</span>
+<span class="fc" id="L103">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
