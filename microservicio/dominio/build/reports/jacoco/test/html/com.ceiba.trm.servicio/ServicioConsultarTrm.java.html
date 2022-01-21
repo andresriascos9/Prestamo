@@ -8,17 +8,17 @@ public class ServicioConsultarTrm {
     private final RepositorioTrm repositorioTrm;
     private static final String FORMATO_DOS_DECIMALES =&quot;#.00&quot;;
 
-<span class="fc" id="L11">    public ServicioConsultarTrm(RepositorioTrm repositorioTrm) {</span>
-<span class="fc" id="L12">        this.repositorioTrm = repositorioTrm;</span>
-<span class="fc" id="L13">    }</span>
+<span class="nc" id="L11">    public ServicioConsultarTrm(RepositorioTrm repositorioTrm) {</span>
+<span class="nc" id="L12">        this.repositorioTrm = repositorioTrm;</span>
+<span class="nc" id="L13">    }</span>
 
     public double ejecutar(LocalDateTime fechaAConsultar) {
-<span class="fc" id="L16">        return darFormatoDosDecimales(repositorioTrm.obtenerTrm(fechaAConsultar));</span>
+<span class="nc" id="L16">        return darFormatoDosDecimales(repositorioTrm.obtenerTrm(fechaAConsultar));</span>
     }
 
     public static double darFormatoDosDecimales(double valor){
-<span class="fc" id="L20">        DecimalFormat df = new DecimalFormat(FORMATO_DOS_DECIMALES);</span>
-<span class="fc" id="L21">        return Double.parseDouble(df.format(valor).replace(',','.'));</span>
+<span class="nc" id="L20">        DecimalFormat df = new DecimalFormat(FORMATO_DOS_DECIMALES);</span>
+<span class="nc" id="L21">        return Double.parseDouble(df.format(valor).replace(',','.'));</span>
     }
 
 

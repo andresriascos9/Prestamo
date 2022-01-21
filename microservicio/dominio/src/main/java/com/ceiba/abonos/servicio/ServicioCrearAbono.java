@@ -57,10 +57,10 @@ public class ServicioCrearAbono {
         LocalDate fechaPago = dtoPrestamo.getFechaPago();
         int valorDebe = valorPrestamo - abonosAnteriores;
         int valorAPagar = calcularValorAPagar(valorPrestamo, valorDebe, fechaPago);
-        if((valorDebe == valorPrestamo) && (valorPrestamo == valorAbono) && ( fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL))){
-            reglaUnSoloPagoAntesDeFechaObtieneDescuento(valorAPagar, valorAbono);
-        }else if(fechaPago.isBefore(FECHA_ACTUAL)){
-            reglaPagoDespuesDeFechaObtieneMoraEnSaldo(valorAPagar, valorAbono);
+        if((valorAbono > valorAPagar) && (abonosAnteriores == 0) && ( fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL))){
+            reglaUnSoloPagoAntesDeFechaObtieneDescuento(valorAPagar);
+        }else if((fechaPago.isBefore(FECHA_ACTUAL)) && (valorAbono < valorAPagar)){
+            reglaPagoDespuesDeFechaObtieneMoraEnSaldo(valorAPagar);
         }else if(valorAPagar < valorAbono) {
             throw new ExcepcionValorInvalido(EL_ABONO_ES_MAYOR_AL_PRESTAMO);
         }else if(valorAPagar == valorAbono){
@@ -76,24 +76,22 @@ public class ServicioCrearAbono {
         this.repositorioPrestamo.actualizar(prestamo, BOOLEAN_ESTADO_PRESTAMO_PAGO);
     }
 
-    private void reglaUnSoloPagoAntesDeFechaObtieneDescuento(int valorAPagar, int valorAbono){
-        if(valorAbono > valorAPagar) {
-            throw new ExcepcionValorInvalido(String.format(DESCUENTO_POR_PAGO_ANTES, valorAPagar));
-        }
+    private void reglaUnSoloPagoAntesDeFechaObtieneDescuento(int valorAPagar){
+        throw new ExcepcionValorInvalido(String.format(DESCUENTO_POR_PAGO_ANTES, valorAPagar));
     }
 
-    private void reglaPagoDespuesDeFechaObtieneMoraEnSaldo(int valorAPagar, int valorAbono){
-        if(valorAbono < valorAPagar) {
-            throw new ExcepcionValorInvalido(String.format(MORA_POR_PAGO_VENCIDO, valorAPagar));
-        }
+    private void reglaPagoDespuesDeFechaObtieneMoraEnSaldo(int valorAPagar){
+        throw new ExcepcionValorInvalido(String.format(MORA_POR_PAGO_VENCIDO, valorAPagar));
     }
 
     private int calcularValorAPagar(int valorPrestamo, int valorDebe, LocalDate fechaPago){
-        int valorAPagar = valorDebe;
+        int valorAPagar;
         if((valorPrestamo == valorDebe) && (fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL)) ){
             valorAPagar = (int) (valorPrestamo*(1-(PORCENTAJE_DESCUENTO_PAGO_ANTICIPADO*0.01)));
         }else if (fechaPago.isBefore(FECHA_ACTUAL)){
             valorAPagar = (int) (valorDebe*(1+(PORCENTAJE_MORA_PAGO_VENCIDO*0.01)));
+        }else{
+            valorAPagar = valorDebe;
         }
         return valorAPagar;
     }

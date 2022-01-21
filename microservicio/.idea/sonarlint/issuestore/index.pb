@@ -63,8 +63,6 @@ l
 <infraestructura/src/test/java/com/ceiba/ApplicationMock.java,1\4\1410330f3ec7b56860a8144fa556631f0f44b619
 v
 Faplicacion/src/main/java/com/ceiba/persona/comando/ComandoPersona.java,c\1\c11d6a207e1d433c8c4a02e297cce56c09ebce99
-z
-Jdominio/src/test/java/com/ceiba/abono/servicio/ServicioCrearAbonoTest.java,a\7\a7c796d01e6f179d28ff8ff22ed6670a992e7d2b
 ˆ
 Xdominio/src/test/java/com/ceiba/abono/servicio/testDataBuilder/AbonoTestDataBuilder.java,9\1\912f257d0bff2df7ea59577aebcb5583c5f3adfe
 ›
@@ -103,10 +101,6 @@ ainfraestructura/src/test/java/com/ceiba/prestamo/controlador/ConsultaControlado
 dinfraestructura/src/test/java/com/ceiba/prestamo/testDataBuilder/ComandoPrestamoTestDataBuilder.java,5\2\52a76c9a1341298766727ccbec3c20fcb9ff9cf0
 
 `infraestructura/src/test/java/com/ceiba/prestamo/controlador/ComandoControladorPrestamoTest.java,a\0\a0de44cfa650a9c0c3beafd706ce29d5d30a5f99
-Ž
-^dominio/src/test/java/com/ceiba/prestamo/servicio/testDataBuilder/PrestamoTestDataBuilder.java,3\e\3e832df58f1042b813f1442c59972346fa26db14
-w
-Gdominio/src/main/java/com/ceiba/abonos/servicio/ServicioCrearAbono.java,8\6\8654fb1b6dada048c258da3fc1ad3de3dcbadc9b
 
 _infraestructura/src/test/java/com/ceiba/persona/controlador/ComandoControladorPersontaTest.java,d\d\dda2735e6d8e54968254316c882769cd2fed3db7
 ~
@@ -137,3 +131,17 @@ y
 Iaplicacion/src/main/java/com/ceiba/trm/consulta/ManejadorConsultaTrm.java,5\a\5a0a83ce4aace6332a5a01e27fc98c74a77d3560
 ‡
 Winfraestructura/src/main/java/com/ceiba/trm/superintendencia/TCRMServicesInterface.java,2\a\2a3f260fd37accbe21993b9887596e6bd34401b3
+~
+Ninfraestructura/src/main/java/com/ceiba/configuracion/trm/BeanServicioTrm.java,d\2\d2ba09e4f8d97c2151860497e10eb42d89d19d5e
+Ž
+^dominio/src/test/java/com/ceiba/prestamo/servicio/testDataBuilder/PrestamoTestDataBuilder.java,3\e\3e832df58f1042b813f1442c59972346fa26db14
+w
+Gdominio/src/main/java/com/ceiba/abonos/servicio/ServicioCrearAbono.java,8\6\8654fb1b6dada048c258da3fc1ad3de3dcbadc9b
+‡
+Winfraestructura/src/test/java/com/ceiba/trm/controlador/ConsultaControladorTrmTest.java,d\9\d96153803599097c72fdeb5909a0b1d2f593670c
+z
+Jdominio/src/test/java/com/ceiba/trm/servicio/ServicioConsultarTrmTest.java,6\0\6066a1a067232b4aec6caa922149b385eef405c3
+v
+Fdominio/src/main/java/com/ceiba/trm/servicio/ServicioConsultarTrm.java,9\c\9c6fb4732beae5eb58917df2425048a88fc711a6
+z
+Jdominio/src/main/java/com/ceiba/trm/puerto/repositorio/RepositorioTrm.java,a\e\aed711939be31a877d7c1e59165221c559acfa77
