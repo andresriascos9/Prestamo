@@ -130,7 +130,7 @@ public class ServicioCrearAbonoTest {
         Mockito.doReturn(dtoPrestamo).when(repositorioPrestamo).obteneroPrestamo(abono.getPrestamo());
         // act - assert
         BasePrueba.assertThrows(() -> servicioCrearAbono.ejecutar(abono),
-                ExcepcionValorInvalido.class,"Tienes un descuento por pago anticipado, su valor a pagar es: $2850000git ");
+                ExcepcionValorInvalido.class,"Tienes un descuento por pago anticipado, su valor a pagar es: $2850000");
     }
 
     @Test
