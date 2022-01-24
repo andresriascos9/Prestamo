@@ -11,7 +11,6 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/abonos")
-@CrossOrigin(origins = "*")
 @Api(tags = { "Controlador comando abonos"})
 public class comandoControladorAbono {
 

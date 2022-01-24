@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/personas")
-@CrossOrigin(origins = "*")
 @Api(tags = { "Controlador comando personas"})
 public class ComandoControladorPersona {
 

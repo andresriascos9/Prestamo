@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/trm")
-@CrossOrigin(origins = "*")
 @Api(tags={"Controlador consulta trm"})
 public class ConsultaControladorTRM {
 
