@@ -2,7 +2,6 @@ package com.ceiba.prestamo.controlador;
 
 import com.ceiba.prestamo.consulta.ManejadorListarPrestamos;
 import com.ceiba.prestamo.modelo.dto.DtoPrestamo;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -12,12 +12,12 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/abonos")
 @Api(tags = { "Controlador comando abonos"})
-public class comandoControladorAbono {
+public class ComandoControladorAbono {
 
     private final ManejadorCrearAbono manejadorCrearAbono;
 
     @Autowired
-    public comandoControladorAbono(ManejadorCrearAbono manejadorCrearAbono) {
+    public ComandoControladorAbono(ManejadorCrearAbono manejadorCrearAbono) {
         this.manejadorCrearAbono = manejadorCrearAbono;
     }
 

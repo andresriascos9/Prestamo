@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.abono.entidad.AbonoTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-01-24T13:40:22" hostname="CARLOS-RIASCO" time="0.076">
+  <properties/>
+  <testcase name="deberiaFallarConValorAbonoNegativo()" classname="com.ceiba.abono.entidad.AbonoTest" time="0.06"/>
+  <testcase name="Deberia crear correctamente el abono" classname="com.ceiba.abono.entidad.AbonoTest" time="0.01"/>
+  <testcase name="deberiaFallarSinIdValorPrestamo()" classname="com.ceiba.abono.entidad.AbonoTest" time="0.002"/>
+  <testcase name="deberiaFallarConIdValorPrestamoNegativo()" classname="com.ceiba.abono.entidad.AbonoTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

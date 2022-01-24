@@ -12,20 +12,19 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping(&quot;/trm&quot;)
-@CrossOrigin(origins = &quot;*&quot;)
 @Api(tags={&quot;Controlador consulta trm&quot;})
 public class ConsultaControladorTRM {
 
     private final ManejadorConsultaTrm manejadorConsultaTrm;
 
-<span class="fc" id="L21">    public ConsultaControladorTRM(ManejadorConsultaTrm manejadorConsultaTrm) {</span>
-<span class="fc" id="L22">        this.manejadorConsultaTrm = manejadorConsultaTrm;</span>
-<span class="fc" id="L23">    }</span>
+<span class="fc" id="L20">    public ConsultaControladorTRM(ManejadorConsultaTrm manejadorConsultaTrm) {</span>
+<span class="fc" id="L21">        this.manejadorConsultaTrm = manejadorConsultaTrm;</span>
+<span class="fc" id="L22">    }</span>
 
     @GetMapping
     @ApiOperation(&quot;Consulta TRM DÃ­a&quot;)
     public double consultarTrmDia() {
-<span class="fc" id="L28">        return this.manejadorConsultaTrm.ejecutar(LocalDateTime.now());</span>
+<span class="fc" id="L27">        return this.manejadorConsultaTrm.ejecutar(LocalDateTime.now());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

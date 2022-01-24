@@ -18,22 +18,22 @@ public class Usuario {
 
     private static final int LONGITUD_MINIMA_CLAVE = 4;
 
-<span class="nc" id="L21">    private Long id;</span>
-<span class="nc" id="L22">    private String nombre;</span>
-<span class="nc" id="L23">    private String clave;</span>
-<span class="nc" id="L24">    private LocalDateTime fechaCreacion;</span>
+<span class="fc" id="L21">    private Long id;</span>
+<span class="fc" id="L22">    private String nombre;</span>
+<span class="fc" id="L23">    private String clave;</span>
+<span class="fc" id="L24">    private LocalDateTime fechaCreacion;</span>
 
-<span class="nc" id="L26">    public Usuario(Long id,String nombre, String clave,LocalDateTime fechaCreacion) {</span>
-<span class="nc" id="L27">        validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO);</span>
-<span class="nc" id="L28">        validarObligatorio(clave, SE_DEBE_INGRESAR_LA_CLAVE);</span>
-<span class="nc" id="L29">        validarLongitud(clave, LONGITUD_MINIMA_CLAVE, String.format(LA_CLAVE_DEBE_TENER_UNA_LONGITUD_MAYOR_O_IGUAL_A,LONGITUD_MINIMA_CLAVE));</span>
-<span class="nc" id="L30">        validarObligatorio(fechaCreacion, SE_DEBE_INGRESAR_LA_FECHA_CREACION);</span>
+<span class="fc" id="L26">    public Usuario(Long id,String nombre, String clave,LocalDateTime fechaCreacion) {</span>
+<span class="fc" id="L27">        validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO);</span>
+<span class="fc" id="L28">        validarObligatorio(clave, SE_DEBE_INGRESAR_LA_CLAVE);</span>
+<span class="fc" id="L29">        validarLongitud(clave, LONGITUD_MINIMA_CLAVE, String.format(LA_CLAVE_DEBE_TENER_UNA_LONGITUD_MAYOR_O_IGUAL_A,LONGITUD_MINIMA_CLAVE));</span>
+<span class="fc" id="L30">        validarObligatorio(fechaCreacion, SE_DEBE_INGRESAR_LA_FECHA_CREACION);</span>
 
-<span class="nc" id="L32">        this.id = id;</span>
-<span class="nc" id="L33">        this.nombre = nombre;</span>
-<span class="nc" id="L34">        this.clave = clave;</span>
-<span class="nc" id="L35">        this.fechaCreacion = fechaCreacion;</span>
-<span class="nc" id="L36">    }</span>
+<span class="fc" id="L32">        this.id = id;</span>
+<span class="fc" id="L33">        this.nombre = nombre;</span>
+<span class="fc" id="L34">        this.clave = clave;</span>
+<span class="fc" id="L35">        this.fechaCreacion = fechaCreacion;</span>
+<span class="fc" id="L36">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
