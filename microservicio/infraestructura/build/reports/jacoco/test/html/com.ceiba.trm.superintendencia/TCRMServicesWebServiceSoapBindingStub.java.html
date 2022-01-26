@@ -184,7 +184,7 @@ public class TCRMServicesWebServiceSoapBindingStub extends Stub implements TCRMS
     public TcrmResponse queryTCRMHelper(Object resp) {
         try {
 <span class="fc" id="L186">            return (TcrmResponse) resp;</span>
-<span class="nc" id="L187">        } catch (Exception e) {</span>
+<span class="nc" id="L187">        } catch (RuntimeException e) {</span>
 <span class="nc" id="L188">            return (TcrmResponse) JavaUtils.convert(resp, TcrmResponse.class);</span>
         }
     }

@@ -1,6 +1,7 @@
 package com.ceiba.prestamo.servicio.testDataBuilder;
 
 import com.ceiba.prestamo.modelo.entidad.Prestamo;
+import com.ceiba.usuario.servicio.testdatabuilder.UsuarioTestDataBuilder;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -23,6 +24,11 @@ public class PrestamoTestDataBuilder {
         this.estado_prestamo_pago = false;
     }
 
+    public PrestamoTestDataBuilder conId(Long id) {
+        this.id = id;
+        return this;
+    }
+
     public PrestamoTestDataBuilder conValorPrestamo(int valor_prestamo){
         this.valor_prestamo = valor_prestamo;
         return this;
@@ -35,6 +41,10 @@ public class PrestamoTestDataBuilder {
 
     public Prestamo build() {
         return new Prestamo(id,valor_prestamo,persona);
+    }
+
+    public Prestamo buildSinParametros() {
+        return new Prestamo(id,estado_prestamo_pago);
     }
 
     public LocalDate sumarDiasHabiles(LocalDate fecha_inicio, int dias) {

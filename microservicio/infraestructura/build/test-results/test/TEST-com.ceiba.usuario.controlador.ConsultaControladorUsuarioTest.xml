@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.usuario.controlador.ConsultaControladorUsuarioTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-24T13:41:21" hostname="CARLOS-RIASCO" time="0.23">
+<testsuite name="com.ceiba.usuario.controlador.ConsultaControladorUsuarioTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-26T21:39:54" hostname="CARLOS-RIASCO" time="3.815">
   <properties/>
-  <testcase name="Deberia listar usuarios" classname="com.ceiba.usuario.controlador.ConsultaControladorUsuarioTest" time="0.23"/>
-  <system-out><![CDATA[2022-01-24 08:41:20.211  INFO 13728 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.usuario.controlador.ConsultaControladorUsuarioTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2022-01-24 08:41:20.213  INFO 13728 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2022-01-24 08:41:20.214  INFO 13728 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@42186ec6, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@599e4e1f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@69f2b622, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@314df172, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3022d7c3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1be7996e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@67d86f96, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@39c0d47e, org.springframework.test.context.event.EventPublishingTestExecutionListener@1ffa804a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@38715632, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1cf12a75, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@23ad6eb1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@681e425e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5a6c49a9, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4f5b7213]
+  <testcase name="Deberia listar usuarios" classname="com.ceiba.usuario.controlador.ConsultaControladorUsuarioTest" time="0.232"/>
+  <testcase name="Deberia fallar al consultar usuario sin existir" classname="com.ceiba.usuario.controlador.ConsultaControladorUsuarioTest" time="0.229"/>
+  <testcase name="Deberia listar usuarios por Id" classname="com.ceiba.usuario.controlador.ConsultaControladorUsuarioTest" time="0.229"/>
+  <system-out><![CDATA[2022-01-26 16:39:52.692  INFO 18376 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.usuario.controlador.ConsultaControladorUsuarioTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-01-26 16:39:52.697  INFO 18376 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-01-26 16:39:52.698  INFO 18376 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@43e9307d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@ffd4ff9, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@55db4561, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2dc54391, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@27a5e48c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4242f506, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4d3d5062, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4a634b9f, org.springframework.test.context.event.EventPublishingTestExecutionListener@426a57db, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@17557055, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@304c9c9d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@60a316b8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@706751f8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4c8c4079, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@18708501]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,42 +16,132 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.5.3)
 
-2022-01-24 08:41:20.258  INFO 13728 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : Starting ConsultaControladorUsuarioTest using Java 1.8.0_311 on CARLOS-RIASCO with PID 13728 (started by carlos.riascos in C:\Users\carlos.riascos\Desktop\ADN\java-arquitectura-hexagonal\microservicio\infraestructura)
-2022-01-24 08:41:20.258  INFO 13728 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : No active profile set, falling back to default profiles: default
-2022-01-24 08:41:20.670  INFO 13728 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
-2022-01-24 08:41:20.672  INFO 13728 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
-2022-01-24 08:41:21.253  INFO 13728 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2022-01-24 08:41:21.258  INFO 13728 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2022-01-24 08:41:21.265  INFO 13728 --- [    Test worker] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:testdb (H2 1.4)
-2022-01-24 08:41:21.266  WARN 13728 --- [    Test worker] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested.
-2022-01-24 08:41:21.282  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 8 migrations (execution time 00:00.007s)
-2022-01-24 08:41:21.285  INFO 13728 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "PUBLIC"."flyway_schema_history"
-2022-01-24 08:41:21.292  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
-2022-01-24 08:41:21.292  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.0 - schema
-2022-01-24 08:41:21.299  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1 - schema persona
-2022-01-24 08:41:21.304  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1.1 - data
-2022-01-24 08:41:21.323  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1.2 - persona  data
-2022-01-24 08:41:21.327  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.2 - schema prestamos
-2022-01-24 08:41:21.332  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.2.1 - prestamos  data
-2022-01-24 08:41:21.336  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.3 - schema abonos
-2022-01-24 08:41:21.341  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.3.1 - abonos  data
-2022-01-24 08:41:21.345  INFO 13728 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 8 migrations to schema "PUBLIC" (execution time 00:00.061s)
-2022-01-24 08:41:21.675  INFO 13728 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-01-24 08:41:21.675  INFO 13728 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-01-24 08:41:21.676  INFO 13728 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2022-01-24 08:41:21.704  INFO 13728 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2022-01-24 08:41:21.705  INFO 13728 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2022-01-24 08:41:21.721  INFO 13728 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2022-01-24 08:41:21.736  INFO 13728 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_1
-2022-01-24 08:41:21.741  INFO 13728 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_2
-2022-01-24 08:41:21.746  INFO 13728 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_3
-2022-01-24 08:41:21.755  INFO 13728 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_1
-2022-01-24 08:41:21.760  INFO 13728 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_2
-2022-01-24 08:41:21.765  INFO 13728 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_3
-2022-01-24 08:41:21.769  INFO 13728 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : Started ConsultaControladorUsuarioTest in 1.552 seconds (JVM running for 51.591)
-2022-01-24 08:41:21.787  INFO 13728 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
-2022-01-24 08:41:22.002  INFO 13728 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
-2022-01-24 08:41:22.003  INFO 13728 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+2022-01-26 16:39:52.754  INFO 18376 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : Starting ConsultaControladorUsuarioTest using Java 1.8.0_311 on CARLOS-RIASCO with PID 18376 (started by carlos.riascos in C:\Users\carlos.riascos\Desktop\ADN\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-01-26 16:39:52.755  INFO 18376 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : No active profile set, falling back to default profiles: default
+2022-01-26 16:39:53.157  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-01-26 16:39:53.160  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-01-26 16:39:53.723  INFO 18376 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-01-26 16:39:53.727  INFO 18376 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-01-26 16:39:53.734  INFO 18376 --- [    Test worker] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-01-26 16:39:53.735  WARN 18376 --- [    Test worker] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested.
+2022-01-26 16:39:53.749  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 8 migrations (execution time 00:00.006s)
+2022-01-26 16:39:53.751  INFO 18376 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "PUBLIC"."flyway_schema_history"
+2022-01-26 16:39:53.756  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2022-01-26 16:39:53.756  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.0 - schema
+2022-01-26 16:39:53.761  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1 - schema persona
+2022-01-26 16:39:53.766  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1.1 - data
+2022-01-26 16:39:53.772  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1.2 - persona  data
+2022-01-26 16:39:53.775  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.2 - schema prestamos
+2022-01-26 16:39:53.781  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.2.1 - prestamos  data
+2022-01-26 16:39:53.786  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.3 - schema abonos
+2022-01-26 16:39:53.791  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.3.1 - abonos  data
+2022-01-26 16:39:53.797  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 8 migrations to schema "PUBLIC" (execution time 00:00.045s)
+2022-01-26 16:39:54.083  INFO 18376 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-01-26 16:39:54.083  INFO 18376 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-01-26 16:39:54.084  INFO 18376 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2022-01-26 16:39:54.102  INFO 18376 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-01-26 16:39:54.116  INFO 18376 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-01-26 16:39:54.127  INFO 18376 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-01-26 16:39:54.136  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_1
+2022-01-26 16:39:54.140  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_2
+2022-01-26 16:39:54.146  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_3
+2022-01-26 16:39:54.155  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_1
+2022-01-26 16:39:54.157  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_2
+2022-01-26 16:39:54.162  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_3
+2022-01-26 16:39:54.167  INFO 18376 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : Started ConsultaControladorUsuarioTest in 1.463 seconds (JVM running for 46.198)
+2022-01-26 16:39:54.197  INFO 18376 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-01-26 16:39:54.404  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-01-26 16:39:54.407  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.3)
+
+2022-01-26 16:39:54.473  INFO 18376 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : Starting ConsultaControladorUsuarioTest using Java 1.8.0_311 on CARLOS-RIASCO with PID 18376 (started by carlos.riascos in C:\Users\carlos.riascos\Desktop\ADN\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-01-26 16:39:54.474  INFO 18376 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : No active profile set, falling back to default profiles: default
+2022-01-26 16:39:54.886  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-01-26 16:39:54.888  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-01-26 16:39:55.516  INFO 18376 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-01-26 16:39:55.520  INFO 18376 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-01-26 16:39:55.528  INFO 18376 --- [    Test worker] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-01-26 16:39:55.529  WARN 18376 --- [    Test worker] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested.
+2022-01-26 16:39:55.542  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 8 migrations (execution time 00:00.006s)
+2022-01-26 16:39:55.544  INFO 18376 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "PUBLIC"."flyway_schema_history"
+2022-01-26 16:39:55.550  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2022-01-26 16:39:55.550  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.0 - schema
+2022-01-26 16:39:55.557  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1 - schema persona
+2022-01-26 16:39:55.564  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1.1 - data
+2022-01-26 16:39:55.569  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1.2 - persona  data
+2022-01-26 16:39:55.575  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.2 - schema prestamos
+2022-01-26 16:39:55.583  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.2.1 - prestamos  data
+2022-01-26 16:39:55.588  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.3 - schema abonos
+2022-01-26 16:39:55.595  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.3.1 - abonos  data
+2022-01-26 16:39:55.601  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 8 migrations to schema "PUBLIC" (execution time 00:00.057s)
+2022-01-26 16:39:55.961  INFO 18376 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-01-26 16:39:55.961  INFO 18376 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-01-26 16:39:55.962  INFO 18376 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2022-01-26 16:39:55.982  INFO 18376 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-01-26 16:39:55.982  INFO 18376 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-01-26 16:39:55.993  INFO 18376 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-01-26 16:39:56.002  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_1
+2022-01-26 16:39:56.005  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_2
+2022-01-26 16:39:56.009  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_3
+2022-01-26 16:39:56.018  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_1
+2022-01-26 16:39:56.021  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_2
+2022-01-26 16:39:56.024  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_3
+2022-01-26 16:39:56.031  INFO 18376 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : Started ConsultaControladorUsuarioTest in 1.609 seconds (JVM running for 48.062)
+2022-01-26 16:39:56.052  INFO 18376 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-01-26 16:39:56.263  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-01-26 16:39:56.265  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.3)
+
+2022-01-26 16:39:56.360  INFO 18376 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : Starting ConsultaControladorUsuarioTest using Java 1.8.0_311 on CARLOS-RIASCO with PID 18376 (started by carlos.riascos in C:\Users\carlos.riascos\Desktop\ADN\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-01-26 16:39:56.361  INFO 18376 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : No active profile set, falling back to default profiles: default
+2022-01-26 16:39:56.744  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-01-26 16:39:56.746  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-01-26 16:39:57.304  INFO 18376 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-01-26 16:39:57.307  INFO 18376 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-01-26 16:39:57.315  INFO 18376 --- [    Test worker] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-01-26 16:39:57.316  WARN 18376 --- [    Test worker] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested.
+2022-01-26 16:39:57.330  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 8 migrations (execution time 00:00.006s)
+2022-01-26 16:39:57.332  INFO 18376 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "PUBLIC"."flyway_schema_history"
+2022-01-26 16:39:57.337  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2022-01-26 16:39:57.337  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.0 - schema
+2022-01-26 16:39:57.341  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1 - schema persona
+2022-01-26 16:39:57.345  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1.1 - data
+2022-01-26 16:39:57.349  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1.2 - persona  data
+2022-01-26 16:39:57.353  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.2 - schema prestamos
+2022-01-26 16:39:57.357  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.2.1 - prestamos  data
+2022-01-26 16:39:57.361  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.3 - schema abonos
+2022-01-26 16:39:57.366  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.3.1 - abonos  data
+2022-01-26 16:39:57.371  INFO 18376 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 8 migrations to schema "PUBLIC" (execution time 00:00.039s)
+2022-01-26 16:39:57.689  INFO 18376 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-01-26 16:39:57.689  INFO 18376 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-01-26 16:39:57.690  INFO 18376 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2022-01-26 16:39:57.708  INFO 18376 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-01-26 16:39:57.709  INFO 18376 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-01-26 16:39:57.721  INFO 18376 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-01-26 16:39:57.731  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_1
+2022-01-26 16:39:57.733  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_2
+2022-01-26 16:39:57.737  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_3
+2022-01-26 16:39:57.746  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_1
+2022-01-26 16:39:57.748  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_2
+2022-01-26 16:39:57.752  INFO 18376 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_3
+2022-01-26 16:39:57.757  INFO 18376 --- [    Test worker] c.c.u.c.ConsultaControladorUsuarioTest   : Started ConsultaControladorUsuarioTest in 1.485 seconds (JVM running for 49.787)
+2022-01-26 16:39:57.774  INFO 18376 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-01-26 16:39:57.987  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-01-26 16:39:57.989  INFO 18376 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

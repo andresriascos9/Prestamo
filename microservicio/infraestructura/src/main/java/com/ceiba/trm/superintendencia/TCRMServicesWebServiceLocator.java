@@ -1,5 +1,6 @@
 package com.ceiba.trm.superintendencia;
 
+import com.ceiba.infraestructura.excepcion.ExcepcionTecnica;
 import org.apache.axis.client.Service;
 import org.apache.axis.client.Stub;
 
@@ -19,6 +20,8 @@ public class TCRMServicesWebServiceLocator extends Service implements TCRMServic
     private static final String TRM_WEBSERVICE_PORT_ADDRESS = "http://AlexChacon:8080/SuperfinancieraWebServiceTRM/TCRMServicesWebService/TCRMServicesWebService";
 
     private static final String WSDL_SERVICE_NAME = "TCRMServicesWebServicePort";
+
+    private static final String URL_NO_RECONOCIDA = "La Url está mal formada";
 
     private HashSet<QName> ports = null;
 
@@ -62,8 +65,10 @@ public class TCRMServicesWebServiceLocator extends Service implements TCRMServic
                 stub.setPortName(getTCRMServicesWebServicePortWSDDServiceName());
                 return stub;
             }
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             throw new ServiceException(e);
+        } catch (MalformedURLException e) {
+            throw new ExcepcionTecnica(URL_NO_RECONOCIDA);
         }
         throw new ServiceException("There is no stub implementation for the interface:  " + serviceEndpointInterface.getName());
     }

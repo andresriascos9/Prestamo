@@ -20,8 +20,9 @@ public class AbonoTest {
     @Test
     @DisplayName("Deberia crear correctamente el abono")
     void deberiaCrearCorrectamenteElAbono() {
-        Abono abono = new AbonoTestDataBuilder().build();
+        Abono abono = new AbonoTestDataBuilder().conId(1L).build();
         //assert
+        assertEquals(1, abono.getId());
         assertEquals(fechaActual, abono.getFechaAbono());
         assertEquals(250000, abono.getValorAbono());
         assertEquals(1L, abono.getPrestamo());

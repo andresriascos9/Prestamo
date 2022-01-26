@@ -22,11 +22,21 @@ public class PrestamoTest {
     @Test
     @DisplayName("Deberia crear correctamente la persona")
     void deberiaCrearCorrectamenteElPrestamo() {
-        Prestamo prestamo = new PrestamoTestDataBuilder().build();
+        Prestamo prestamo = new PrestamoTestDataBuilder().conId(1L).build();
         //assert
+        assertEquals(1, prestamo.getId());
         assertEquals(sumarDiasHabiles(fechaActual, diasHabilesASumar), prestamo.getFechaPago());
         assertEquals(3000000, prestamo.getValorPrestamo());
         assertEquals(1L, prestamo.getPersona());
+        assertEquals(false, prestamo.getEstadoPrestamoPago());
+    }
+
+    @Test
+    @DisplayName("Deberia crear correctamente la persona")
+    void deberiaCrearCorrectamenteElPrestamoCon2Parametros() {
+        Prestamo prestamo = new PrestamoTestDataBuilder().conId(1L).buildSinParametros();
+        //assert
+        assertEquals(1, prestamo.getId());
         assertEquals(false, prestamo.getEstadoPrestamoPago());
     }
 

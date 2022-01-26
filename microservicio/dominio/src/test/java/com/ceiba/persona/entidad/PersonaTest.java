@@ -15,8 +15,9 @@ public class PersonaTest {
     @Test
     @DisplayName("Deberia crear correctamente la persona")
     void deberiaCrearCorrectamenteLaPersona() {
-        Persona persona = new PersonaTestDataBuilder().build();
+        Persona persona = new PersonaTestDataBuilder().conId(1L).build();
         //assert
+        assertEquals(1, persona.getId());
         assertEquals(1116269914, persona.getIdentificacion());
         assertEquals("Test Lorem Insup", persona.getNombre());
     }

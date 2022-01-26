@@ -52,6 +52,44 @@ public class ServicioCrearAbonoTest {
     }
 
     @Test
+    @DisplayName("Deberia Crear el abono de manera correcta con pago total en dos abonos")
+    void deberiaCrearElAbonoDeManeraCorrectaConDosAbonos() {
+        // arrange
+        Abono abono = new AbonoTestDataBuilder().buildConValorAbono(1000000);
+        Prestamo prestamo = new PrestamoTestDataBuilder().build();
+        DtoPrestamo dtoPrestamo = new DtoPrestamo(prestamo.getId(), prestamo.getFechaPago(),prestamo.getValorPrestamo(),
+                prestamo.getPersona(),prestamo.getEstadoPrestamoPago());
+        Mockito.doReturn(1L).when(repositorioAbono).crear(abono);
+        Mockito.doReturn(2000000).when(repositorioAbono).sumarAbonos(abono.getPrestamo());
+        Mockito.doReturn(true).when(repositorioPrestamo).existePorId(abono.getPrestamo());
+        Mockito.doReturn(dtoPrestamo).when(repositorioPrestamo).obteneroPrestamo(abono.getPrestamo());
+        // act
+        Long idAbono = servicioCrearAbono.ejecutar(abono);
+        //assert
+        assertEquals(1000000, abono.getValorAbono());
+        assertEquals(1l, idAbono);
+    }
+
+    @Test
+    @DisplayName("Deberia fallar porque el saldo es mayor a abono")
+    void deberiaFallarElAbonoPorqueSaldoEsMayorAbono() {
+        // arrange
+        Abono abono = new AbonoTestDataBuilder().buildConValorAbono(2000000);
+        Prestamo prestamo = new PrestamoTestDataBuilder().build();
+        prestamo.setFechaPago(LocalDate.now().minusDays(2));
+        DtoPrestamo dtoPrestamo = new DtoPrestamo(prestamo.getId(), prestamo.getFechaPago(),prestamo.getValorPrestamo(),
+                prestamo.getPersona(),prestamo.getEstadoPrestamoPago());
+        Mockito.doReturn(1L).when(repositorioAbono).crear(abono);
+        Mockito.doReturn(2000000).when(repositorioAbono).sumarAbonos(abono.getPrestamo());
+        Mockito.doReturn(true).when(repositorioPrestamo).existePorId(abono.getPrestamo());
+        Mockito.doReturn(dtoPrestamo).when(repositorioPrestamo).obteneroPrestamo(abono.getPrestamo());
+        //assert
+        // act - assert
+        BasePrueba.assertThrows(() -> servicioCrearAbono.ejecutar(abono),
+                ExcepcionValorInvalido.class,"El abono es mayor a el saldo del préstamo");
+    }
+
+    @Test
     @DisplayName("Deberia crear el abono con un valor mayor en fecha anticipada")
     void deberiaCrearElAbonoConDescuentoDeFechaActualizada() {
         Abono abono = new AbonoTestDataBuilder().buildConValorAbono(2850000);
@@ -104,21 +142,6 @@ public class ServicioCrearAbonoTest {
     }
 
     @Test
-    @DisplayName("Deberia fallar el abono con un valor mayor en fecha anticipada")
-    void deberiaFallarElAbonoPorValorDeAbonoMayor() {
-        Abono abono = new AbonoTestDataBuilder().buildConValorAbono(3000000);
-        Prestamo prestamo = new PrestamoTestDataBuilder().build();
-        DtoPrestamo dtoPrestamo = new DtoPrestamo(prestamo.getId(), prestamo.getFechaPago(),prestamo.getValorPrestamo(),
-                prestamo.getPersona(),prestamo.getEstadoPrestamoPago());
-        Mockito.doReturn(1L).when(repositorioAbono).crear(abono);
-        Mockito.doReturn(true).when(repositorioPrestamo).existePorId(abono.getPrestamo());
-        Mockito.doReturn(dtoPrestamo).when(repositorioPrestamo).obteneroPrestamo(abono.getPrestamo());
-        // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearAbono.ejecutar(abono),
-                ExcepcionValorInvalido.class,"Tienes un descuento por pago anticipado, su valor a pagar es: $2850000");
-    }
-
-    @Test
     @DisplayName("Deberia fallar el abono con un valor mayor al saldo")
     void deberiaFallarElAbonoConAbonoMayorASaldo() {
         Abono abono = new AbonoTestDataBuilder().buildConValorAbono(4000000);
@@ -148,21 +171,6 @@ public class ServicioCrearAbonoTest {
                 ExcepcionValorInvalido.class,"Tienes un descuento por pago anticipado, su valor a pagar es: $2850000");
     }
 
-    @Test
-    @DisplayName("Deberia fallar el abono con un valor de abono igual a valor de prestamo con descuento en el día de hoy")
-    void deberiaFallarElAbonoConDescuentoAplicadoPorFechaHoy() {
-        Abono abono = new AbonoTestDataBuilder().buildConValorAbono(3000000);
-        Prestamo prestamo = new PrestamoTestDataBuilder().build();
-        prestamo.setFechaPago(LocalDate.now());
-        DtoPrestamo dtoPrestamo = new DtoPrestamo(prestamo.getId(), prestamo.getFechaPago(),prestamo.getValorPrestamo(),
-                prestamo.getPersona(),prestamo.getEstadoPrestamoPago());
-        Mockito.doReturn(1L).when(repositorioAbono).crear(abono);
-        Mockito.doReturn(true).when(repositorioPrestamo).existePorId(abono.getPrestamo());
-        Mockito.doReturn(dtoPrestamo).when(repositorioPrestamo).obteneroPrestamo(abono.getPrestamo());
-        // act - assert
-        BasePrueba.assertThrows(() -> servicioCrearAbono.ejecutar(abono),
-                ExcepcionValorInvalido.class,"Tienes un descuento por pago anticipado, su valor a pagar es: $2850000");
-    }
 
     @Test
     @DisplayName("Deberia fallar porque el prestamo no existe")

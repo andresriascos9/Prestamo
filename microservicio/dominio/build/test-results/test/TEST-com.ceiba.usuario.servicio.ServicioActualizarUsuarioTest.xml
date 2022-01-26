@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.usuario.servicio.ServicioActualizarUsuarioTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-01-24T13:40:25" hostname="CARLOS-RIASCO" time="0.063">
+<testsuite name="com.ceiba.usuario.servicio.ServicioActualizarUsuarioTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-01-26T21:39:05" hostname="CARLOS-RIASCO" time="0.066">
   <properties/>
-  <testcase name="Deberia actualizar correctamente en el repositorio" classname="com.ceiba.usuario.servicio.ServicioActualizarUsuarioTest" time="0.059"/>
-  <testcase name="Deberia validar la existencia previa del usuario" classname="com.ceiba.usuario.servicio.ServicioActualizarUsuarioTest" time="0.002"/>
+  <testcase name="Deberia actualizar correctamente en el repositorio" classname="com.ceiba.usuario.servicio.ServicioActualizarUsuarioTest" time="0.061"/>
+  <testcase name="Deberia validar la existencia previa del usuario" classname="com.ceiba.usuario.servicio.ServicioActualizarUsuarioTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

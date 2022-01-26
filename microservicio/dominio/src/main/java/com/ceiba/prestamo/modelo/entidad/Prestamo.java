@@ -52,9 +52,6 @@ public class Prestamo {
     }
 
     private LocalDate sumarDiasHabiles(LocalDate fechaInicio, int dias) {
-        if (dias < 1) {
-            return fechaInicio;
-        }
         LocalDate fechaCalculada = fechaInicio;
         int diasSumados = 0;
         while (diasSumados < dias) {

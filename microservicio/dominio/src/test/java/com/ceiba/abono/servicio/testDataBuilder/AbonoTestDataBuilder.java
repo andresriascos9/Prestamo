@@ -1,6 +1,7 @@
 package com.ceiba.abono.servicio.testDataBuilder;
 
 import com.ceiba.abonos.modelo.entidad.Abono;
+import com.ceiba.persona.servicio.testDataBuilder.PersonaTestDataBuilder;
 import com.ceiba.prestamo.modelo.entidad.Prestamo;
 import com.ceiba.prestamo.servicio.testDataBuilder.PrestamoTestDataBuilder;
 
@@ -21,6 +22,11 @@ public class AbonoTestDataBuilder {
         this.fechaAbono = fechaActual;
         this.valorAbono = 250000;
         this.prestamo = 1L;
+    }
+
+    public AbonoTestDataBuilder conId(Long id) {
+        this.id = id;
+        return this;
     }
 
     public AbonoTestDataBuilder conValorAbono(int valorAbono){

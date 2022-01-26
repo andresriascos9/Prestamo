@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TCRMServicesInterfaceProxy.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.trm.superintendencia</a> &gt; <span class="el_source">TCRMServicesInterfaceProxy.java</span></div><h1>TCRMServicesInterfaceProxy.java</h1><pre class="source lang-java linenums">package com.ceiba.trm.superintendencia;
+import com.ceiba.infraestructura.excepcion.ExcepcionTecnica;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,35 +10,38 @@ import java.util.Calendar;
 
 
 public class TCRMServicesInterfaceProxy implements TCRMServicesInterface{
-<span class="fc" id="L12">    private static final Logger LOGGER = LoggerFactory.getLogger(TCRMServicesInterfaceProxy.class);</span>
+<span class="fc" id="L13">    private static final Logger LOGGER = LoggerFactory.getLogger(TCRMServicesInterfaceProxy.class);</span>
     private static final String ENDPOINT_PROPERTY = &quot;javax.xml.rpc.service.endpoint.address&quot;;
+    private static final String SERVICIO_EXCEPCION = &quot;ExcepciÃ³n en el servicio&quot;;
     private String endPoint;
-<span class="fc" id="L15">    private TCRMServicesInterface tCRMServicesInterface = null;</span>
+<span class="fc" id="L17">    private TCRMServicesInterface tCRMServicesInterface = null;</span>
 
-<span class="fc" id="L17">    public TCRMServicesInterfaceProxy(String endPoint) throws ServiceException {</span>
-<span class="fc" id="L18">        this.endPoint = endPoint;</span>
-<span class="fc" id="L19">        initTCRMServicesInterfaceProxy();</span>
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L19">    public TCRMServicesInterfaceProxy(String endPoint) throws ServiceException {</span>
+<span class="fc" id="L20">        this.endPoint = endPoint;</span>
+<span class="fc" id="L21">        initTCRMServicesInterfaceProxy();</span>
+<span class="fc" id="L22">    }</span>
 
     private void initTCRMServicesInterfaceProxy() throws ServiceException {
 
-<span class="fc" id="L24">        this.tCRMServicesInterface = (new TCRMServicesWebServiceLocator()).getTCRMServicesWebServicePort();</span>
-<span class="pc bpc" id="L25" title="1 of 2 branches missed.">        if (this.tCRMServicesInterface != null) {</span>
-<span class="pc bpc" id="L26" title="1 of 2 branches missed.">            if (endPoint != null)</span>
-<span class="fc" id="L27">                ((Stub) this.tCRMServicesInterface)._setProperty(ENDPOINT_PROPERTY, this.endPoint);</span>
+<span class="fc" id="L26">        this.tCRMServicesInterface = (new TCRMServicesWebServiceLocator()).getTCRMServicesWebServicePort();</span>
+<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        if (this.tCRMServicesInterface != null) {</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">            if (endPoint != null)</span>
+<span class="fc" id="L29">                ((Stub) this.tCRMServicesInterface)._setProperty(ENDPOINT_PROPERTY, this.endPoint);</span>
             else
-<span class="nc" id="L29">                this.endPoint = (String) ((Stub) this.tCRMServicesInterface)._getProperty(ENDPOINT_PROPERTY);</span>
+<span class="nc" id="L31">                this.endPoint = (String) ((Stub) this.tCRMServicesInterface)._getProperty(ENDPOINT_PROPERTY);</span>
         }
-<span class="fc" id="L31">    }</span>
+<span class="fc" id="L33">    }</span>
 
     public TcrmResponse queryTCRM(Calendar trmQueryAssociatedDate) throws RemoteException {
         try {
-<span class="pc bpc" id="L35" title="1 of 2 branches missed.">            if (this.tCRMServicesInterface == null)</span>
-<span class="nc" id="L36">                initTCRMServicesInterfaceProxy();</span>
-<span class="fc" id="L37">            return this.tCRMServicesInterface.queryTCRM(trmQueryAssociatedDate);</span>
-<span class="nc" id="L38">        }catch (RemoteException | ServiceException e){</span>
-<span class="nc" id="L39">            LOGGER.info(e.getMessage());</span>
-<span class="nc" id="L40">            throw  new RemoteException(e.getMessage());</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">            if (this.tCRMServicesInterface == null)</span>
+<span class="nc" id="L38">                initTCRMServicesInterfaceProxy();</span>
+<span class="fc" id="L39">            return this.tCRMServicesInterface.queryTCRM(trmQueryAssociatedDate);</span>
+<span class="nc" id="L40">        }catch (RemoteException e){</span>
+<span class="nc" id="L41">            LOGGER.info(e.getMessage());</span>
+<span class="nc" id="L42">            throw  new RemoteException(e.getMessage());</span>
+<span class="nc" id="L43">        }catch (ServiceException e){</span>
+<span class="nc" id="L44">            throw new ExcepcionTecnica(SERVICIO_EXCEPCION);</span>
         }
     }
 }
