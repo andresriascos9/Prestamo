@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-26T21:39:05" hostname="CARLOS-RIASCO" time="0.009">
+<testsuite name="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-01-27T14:15:32" hostname="CARLOS-RIASCO" time="0.011">
   <properties/>
-  <testcase name="Deberia lanzar una exepcion cuando se valide la existencia de la persona" classname="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" time="0.003"/>
-  <testcase name="Deberia Crear el prestamo de manera correcta" classname="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" time="0.002"/>
-  <testcase name="Deberia lanzar una exepcion cuando se valide la existencia del prestamo a la persona sin tener el otro prestamo pago" classname="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" time="0.002"/>
+  <testcase name="Deberia lanzar una exepcion cuando se valide la existencia de la persona" classname="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" time="0.004"/>
+  <testcase name="Deberia Crear el prestamo de manera correcta" classname="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" time="0.004"/>
+  <testcase name="Deberia lanzar una exepcion cuando se valide la existencia del prestamo a la persona sin tener el otro prestamo pago" classname="com.ceiba.prestamo.servicio.ServicioCrearPrestamoTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

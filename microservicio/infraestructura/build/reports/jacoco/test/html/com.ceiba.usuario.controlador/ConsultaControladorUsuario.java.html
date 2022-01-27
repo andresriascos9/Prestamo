@@ -2,7 +2,6 @@
 
 import java.util.List;
 
-import com.ceiba.usuario.comando.ComandoUsuario;
 import com.ceiba.usuario.consulta.ManejadorListarUsuarios;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,20 +17,20 @@ public class ConsultaControladorUsuario {
 
     private final ManejadorListarUsuarios manejadorListarUsuarios;
 
-<span class="fc" id="L21">    public ConsultaControladorUsuario(ManejadorListarUsuarios manejadorListarUsuarios) {</span>
-<span class="fc" id="L22">        this.manejadorListarUsuarios = manejadorListarUsuarios;</span>
-<span class="fc" id="L23">    }</span>
+<span class="fc" id="L20">    public ConsultaControladorUsuario(ManejadorListarUsuarios manejadorListarUsuarios) {</span>
+<span class="fc" id="L21">        this.manejadorListarUsuarios = manejadorListarUsuarios;</span>
+<span class="fc" id="L22">    }</span>
 
     @GetMapping
     @ApiOperation(&quot;Listar Usuarios&quot;)
     public List&lt;DtoUsuario&gt; listar() {
-<span class="fc" id="L28">        return this.manejadorListarUsuarios.ejecutar();</span>
+<span class="fc" id="L27">        return this.manejadorListarUsuarios.ejecutar();</span>
     }
 
     @GetMapping(value=&quot;/{id}&quot;)
     @ApiOperation(&quot;Listar un solo Usuario&quot;)
     public DtoUsuario usuario(@PathVariable Long id) {
-<span class="fc" id="L34">        return this.manejadorListarUsuarios.ejecutarUnSoloUsuario(id);</span>
+<span class="fc" id="L33">        return this.manejadorListarUsuarios.ejecutarUnSoloUsuario(id);</span>
     }
 
 

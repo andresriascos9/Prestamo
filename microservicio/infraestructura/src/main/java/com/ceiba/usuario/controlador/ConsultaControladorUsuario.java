@@ -2,7 +2,6 @@ package com.ceiba.usuario.controlador;
 
 import java.util.List;
 
-import com.ceiba.usuario.comando.ComandoUsuario;
 import com.ceiba.usuario.consulta.ManejadorListarUsuarios;
 import org.springframework.web.bind.annotation.*;
 

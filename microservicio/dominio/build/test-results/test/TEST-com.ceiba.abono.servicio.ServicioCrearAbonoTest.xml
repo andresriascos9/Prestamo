@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.abono.servicio.ServicioCrearAbonoTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-01-26T21:39:03" hostname="CARLOS-RIASCO" time="2.107">
+<testsuite name="com.ceiba.abono.servicio.ServicioCrearAbonoTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-01-27T14:15:29" hostname="CARLOS-RIASCO" time="2.281">
   <properties/>
-  <testcase name="Deberia fallar porque el prestamo no existe" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="2.043"/>
-  <testcase name="Deberia Crear el abono de manera correcta con pago total en dos abonos" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.014"/>
-  <testcase name="Deberia fallar porque el prestamo ya está cancelado" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.006"/>
-  <testcase name="Deberia crear el abono con un valor mayor en fecha vencida" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.005"/>
-  <testcase name="Deberia crear el abono con un valor mayor en fecha anticipada" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.005"/>
-  <testcase name="Deberia Crear el abono de manera correcta con un valor restante" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.005"/>
-  <testcase name="Deberia fallar el abono con un valor mayor al saldo" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.004"/>
+  <testcase name="Deberia fallar porque el prestamo no existe" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="2.216"/>
+  <testcase name="Deberia Crear el abono de manera correcta con pago total en dos abonos" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.016"/>
+  <testcase name="Deberia fallar porque el prestamo ya está cancelado" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.011"/>
+  <testcase name="Deberia crear el abono con un valor mayor en fecha vencida" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.004"/>
+  <testcase name="Deberia crear el abono con un valor mayor en fecha anticipada" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.003"/>
+  <testcase name="Deberia Crear el abono de manera correcta con un valor restante" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.003"/>
+  <testcase name="Deberia fallar el abono con un valor mayor al saldo" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.003"/>
   <testcase name="Deberia fallar el abono con un valor de abono igual a valor de prestamo con descuento" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.004"/>
   <testcase name="Deberia fallar porque el saldo es mayor a abono" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.004"/>
   <testcase name="Deberia fallar el abono con un valor menor en fecha vencida" classname="com.ceiba.abono.servicio.ServicioCrearAbonoTest" time="0.004"/>
