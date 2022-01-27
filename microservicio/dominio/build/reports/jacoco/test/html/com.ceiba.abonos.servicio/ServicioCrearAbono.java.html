@@ -57,7 +57,7 @@ public class ServicioCrearAbono {
 <span class="fc" id="L57">        LocalDate fechaPago = dtoPrestamo.getFechaPago();</span>
 <span class="fc" id="L58">        int valorDebe = valorPrestamo - abonosAnteriores;</span>
 <span class="fc" id="L59">        int valorAPagar = calcularValorAPagar(valorPrestamo, valorDebe, fechaPago);</span>
-<span class="pc bpc" id="L60" title="3 of 8 branches missed.">        if((valorAbono &gt; valorAPagar) &amp;&amp; (abonosAnteriores == 0) &amp;&amp; ( fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL))){</span>
+<span class="pc bpc" id="L60" title="1 of 8 branches missed.">        if((valorAbono &gt; valorAPagar) &amp;&amp; (abonosAnteriores == 0) &amp;&amp; ( fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL))){</span>
 <span class="nc" id="L61">            reglaUnSoloPagoAntesDeFechaObtieneDescuento(valorAPagar);</span>
 <span class="fc bfc" id="L62" title="All 4 branches covered.">        }else if((fechaPago.isBefore(FECHA_ACTUAL)) &amp;&amp; (valorAbono &lt; valorAPagar)){</span>
 <span class="nc" id="L63">            reglaPagoDespuesDeFechaObtieneMoraEnSaldo(valorAPagar);</span>
@@ -86,7 +86,7 @@ public class ServicioCrearAbono {
 
     private int calcularValorAPagar(int valorPrestamo, int valorDebe, LocalDate fechaPago){
         int valorAPagar;
-<span class="pc bpc" id="L89" title="1 of 6 branches missed.">        if((valorPrestamo == valorDebe) &amp;&amp; (fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL)) ){</span>
+<span class="fc bfc" id="L89" title="All 6 branches covered.">        if((valorPrestamo == valorDebe) &amp;&amp; (fechaPago.isAfter(FECHA_ACTUAL) || fechaPago.isEqual(FECHA_ACTUAL)) ){</span>
 <span class="fc" id="L90">            valorAPagar = (int) (valorPrestamo*(1-(PORCENTAJE_DESCUENTO_PAGO_ANTICIPADO*0.01)));</span>
 <span class="fc bfc" id="L91" title="All 2 branches covered.">        }else if (fechaPago.isBefore(FECHA_ACTUAL)){</span>
 <span class="fc" id="L92">            valorAPagar = (int) (valorDebe*(1+(PORCENTAJE_MORA_PAGO_VENCIDO*0.01)));</span>

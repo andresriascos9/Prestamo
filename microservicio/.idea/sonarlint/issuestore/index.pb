@@ -87,8 +87,6 @@ kinfraestructura/src/test/java/com/ceiba/usuario/servicio/testdatabuilder/Comand
 `infraestructura/src/test/java/com/ceiba/prestamo/controlador/ComandoControladorPrestamoTest.java,a\0\a0de44cfa650a9c0c3beafd706ce29d5d30a5f99
 î
 dinfraestructura/src/test/java/com/ceiba/prestamo/testDataBuilder/ComandoPrestamoTestDataBuilder.java,5\2\52a76c9a1341298766727ccbec3c20fcb9ff9cf0
-é
-^infraestructura/src/test/java/com/ceiba/usuario/controlador/ComandoControladorUsuarioTest.java,e\3\e372608d96aa996975b70a17734b054099d79944
 è
 _infraestructura/src/test/java/com/ceiba/usuario/controlador/ConsultaControladorUsuarioTest.java,c\4\c44f05a9b8d3c6e259e595ec90513321d6eda0bc
 Ä
